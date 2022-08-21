@@ -17,7 +17,7 @@
       <q-img src="src/assets/background-1.png" class="background" />
       <div class="afterIntro">
         <div class="whatIs">
-
+        <!-- начинать тут -->
         </div>
         <div class="partners">
         </div>
@@ -30,7 +30,7 @@
               <div class="title"></div>
               <div class="description"></div>
             </div>
-            
+
 
           </div>
           <div class="transfer"></div>
