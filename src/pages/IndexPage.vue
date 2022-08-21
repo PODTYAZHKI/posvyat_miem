@@ -8,7 +8,7 @@
       <div class="subtitle flex flex-center column">
         Скорее регистрируйся и проведи <br> лучшую ночь этой осени вместе с нами!
         <div class="q-mt-md">
-          <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" size="32px" />
+          <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" />
           <q-btn no-caps label="Узнать больше" class="btn btn-more" />
         </div>
       </div>
@@ -21,72 +21,104 @@
         </div>
         <div class="partners">
         </div>
-        <div class="cost wrapper ">
-          <q-img src="src/assets/yellow-line.png" class="background" />
+        <div class="cost wrapper flex flex-center column">
+
           <div class="title flex flex-center q-pt-xl q-pb-md">
             Что входит в стоимость?
           </div>
-          <div class="accomodation">
-            <div class="card-text justify-end">
-              <div class="card-title">Проживание</div>
-              <div class="card-description">Мы знаем, как важен здоровый сон для студентов, поэтому тебя ждёт уютная
-                комната и тёплое спальное место. Также в комнатах самые стойкие смогут продолжить вечер со своей
-                компанией!</div>
-            </div>
+          <q-img src="src/assets/cost.png" class="line" />
+          <div class="cost-text column">
 
+            <div class="accomodation row " style="margin-top: 100px;">
+              <div class="picture-wrapper">
+                <!-- <q-img src="src/assets/accomodation.png" class="picture" /> -->
+              </div>
+              <div class="card-text ">
+                <div class="card-title">Проживание</div>
+                <div class="card-description">Мы знаем, как важен здоровый сон для студентов, поэтому тебя ждёт уютная
+                  комната и тёплое спальное место. Также в комнатах самые стойкие смогут продолжить вечер со своей
+                  компанией!</div>
+              </div>
+            </div>
+            <div class="transfer row" style="margin-top: 450px;">
 
-          </div>
-          <div class="transfer">
-            <div class="card-text">
-              <div class="card-title">Трансфер туда и обратно</div>
-              <div class="card-description">Тебе не придётся думать о том, как доехать до места проведения или добраться
-                до метро после Посвята.
+              <div class="card-text">
+                <div class="card-title">Трансфер туда и обратно</div>
+                <div class="card-description">Тебе не придётся думать о том, как доехать до места проведения или
+                  добраться
+                  до метро после Посвята.
+                </div>
+              </div>
+              <div class="picture-wrapper">
+                <!-- <q-img src="src/assets/transfer.png" class="picture" /> -->
               </div>
             </div>
-          </div>
-          <div class="food">
-            <div class="card-text">
-              <div class="card-title">Ужин и завтрак в формате шведского стола</div>
-              <div class="card-description">Собираешься много общаться, петь и танцевать? Хочешь, чтобы сил хватило до
-                утра? Тогда шведский стол со вкусной полезной едой – то, что нужно!
+            <div class="food row" style="margin-top: 250px;">
+              <div class="picture-wrapper">
+                <!-- <q-img src="src/assets/food.png" class="picture" /> -->
+              </div>
+              <div class="card-text">
+                <div class="card-title">Ужин и завтрак в формате шведского стола</div>
+                <div class="card-description">Собираешься много общаться, петь и танцевать? Хочешь, чтобы сил хватило до
+                  утра? Тогда шведский стол со вкусной полезной едой – то, что нужно!
+                </div>
               </div>
             </div>
-          </div>
-          <div class="welcome">
-            <div class="card-text">
-              <div class="card-title">Велком-программа</div>
-              <div class="card-description">Первые знакомства, неповторимые задания и много-много сюрпризов помогут тебе
-                собраться с мыслями и погрузиться в атмосферу американской ярмарки.</div>
-            </div>
-          </div>
-          <div class="program">
-            <div class="card-text">
-              <div class="card-title">Основная программа</div>
-              <div class="card-description">Командная игра? Сюжетная линия, погружающая в атмосферу с каждой секундой
-                всё больше? Изумительный поворот событий? На Посвяте возможно всё и сразу!</div>
-            </div>
-          </div>
-          <div class="show">
-            <div class="card-text">
-              <div class="card-title">Яркое шоу</div>
-              <div class="card-description">Выступление музыкальной группы, тематический танец, ритуал посвящения в
-                студенты — всё это организаторы подготовили для тебя!
+            <div class="welcome row" style="margin-top: 250px;">
+
+              <div class="card-text">
+                <div class="card-title">Велком-программа</div>
+                <div class="card-description">Первые знакомства, неповторимые задания и много-много сюрпризов помогут
+                  тебе
+                  собраться с мыслями и погрузиться в атмосферу американской ярмарки.</div>
+              </div>
+              <div class="picture-wrapper">
+                <!-- <q-img src="src/assets/welcome.png" class="picture" /> -->
               </div>
             </div>
-          </div>
-          <div class="night">
-            <div class="card-text">
-              <div class="card-title">Ночная программа</div>
-              <div class="card-description">Дискотека, гитарники, неповторимые задания и ночные точки для тех, кто любит
-                давать волю эмоциям, – все это будет на Посвяте!
+            <div class="program row" style="margin-top: 350px;">
+              <div class="picture-wrapper">
+                <!-- <q-img src="src/assets/program.png" class="picture" /> -->
+              </div>
+              <div class="card-text">
+                <div class="card-title">Основная программа</div>
+                <div class="card-description">Командная игра? Сюжетная линия, погружающая в атмосферу с каждой секундой
+                  всё больше? Изумительный поворот событий? На Посвяте возможно всё и сразу!</div>
               </div>
             </div>
-          </div>
-          <div class="photo">
-            <div class="card-text">
-              <div class="card-title">Фотозоны</div>
-              <div class="card-description">Благодаря фотографиям ты сможешь освежить в памяти моменты вечера! Помогут в
-                этом наши фотографы. А селфизоны созданы для того, чтобы ты точно подобрал нужный ракурс!
+            <div class="show row" style="margin-top: 400px;">
+              <div class="card-text">
+                <div class="card-title">Яркое шоу</div>
+                <div class="card-description">Выступление музыкальной группы, тематический танец, ритуал посвящения в
+                  студенты — всё это организаторы подготовили для тебя!
+                </div>
+              </div>
+              <div class="picture-wrapper">
+                <!-- <q-img src="src/assets/show.png" class="picture" /> -->
+              </div>
+            </div>
+            <div class="night row" style="margin-top: 270px;">
+              <div class="picture-wrapper">
+                <q-img src="src/assets/night.png" class="picture" />
+              </div>
+              <div class="card-text">
+                <div class="card-title">Ночная программа</div>
+                <div class="card-description">Дискотека, гитарники, неповторимые задания и ночные точки для тех, кто
+                  любит
+                  давать волю эмоциям, – все это будет на Посвяте!
+                </div>
+              </div>
+            </div>
+            <div class="photo row" style="margin-top: 300px; padding-bottom: 300px">
+              <div class="card-text">
+                <div class="card-title">Фотозоны</div>
+                <div class="card-description">Благодаря фотографиям ты сможешь освежить в памяти моменты вечера! Помогут
+                  в
+                  этом наши фотографы. А селфизоны созданы для того, чтобы ты точно подобрал нужный ракурс!
+                </div>
+              </div>
+              <div class="picture-wrapper">
+                <!-- <q-img src="src/assets/photo.png" class="picture" /> -->
               </div>
             </div>
           </div>
@@ -150,14 +182,14 @@ export default defineComponent({
 .suptitle {
   font-style: normal;
   font-weight: 800;
-  font-size: 40px;
+  font-size: 30px;
   text-transform: uppercase;
   font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
 .subtitle {
   font-weight: 600;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 100%;
   /* or 40px */
 
@@ -169,7 +201,7 @@ export default defineComponent({
   border-radius: 16px;
   font-style: normal;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 20px;
   line-height: 100%;
   /* identical to box height, or 32px */
 
@@ -215,16 +247,24 @@ export default defineComponent({
 
 .cost {
   background: #212121;
+  position: relative;
+
+  &-text {
+    z-index: 1;
+  }
+
 
   .card {
     &-text {
       width: 50%;
       //float: right;
     }
+
     &-title {
       font-weight: 900;
-      font-size: 48px;
+      font-size: 40px;
       line-height: 100%;
+      margin-bottom: 20px;
       /* identical to box height, or 48px */
 
       font-feature-settings: 'pnum' on, 'lnum' on;
@@ -234,7 +274,7 @@ export default defineComponent({
     &-description {
       font-style: normal;
       font-weight: 600;
-      font-size: 32px;
+      font-size: 30px;
       line-height: 100%;
       /* or 32px */
 
@@ -243,28 +283,41 @@ export default defineComponent({
     }
   }
 }
+
+.picture {
+  &-wrapper {
+    width: 50%;
+  }
+}
+
+.line {
+  width: 100%;
+  position: absolute;
+  top: 130px;
+}
+
 .accomodation {
-  float: right;
-}
-.transfer {
+  .picture {
+    //position: absolute;
+
+    &-wrapper {
+      position: relative;
+    }
+  }
 
 }
-.food {
 
-}
-.welcome {
+.transfer {}
 
-}
-.programm {
+.food {}
 
-}
-.show {
+.welcome {}
 
-}
-.night {
+.programm {}
 
-}
-.photo {
+.show {}
 
-}
+.night {}
+
+.photo {}
 </style>
