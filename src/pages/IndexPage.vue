@@ -17,29 +17,79 @@
       <q-img src="src/assets/background-1.png" class="background" />
       <div class="afterIntro">
         <div class="whatIs">
-        <!-- начинать тут -->
+          <!-- начинать тут -->
         </div>
         <div class="partners">
         </div>
         <div class="cost wrapper ">
+          <q-img src="src/assets/yellow-line.png" class="background" />
           <div class="title flex flex-center q-pt-xl q-pb-md">
             Что входит в стоимость?
           </div>
           <div class="accomodation">
-            <div class="text">
-              <div class="title"></div>
-              <div class="description"></div>
+            <div class="card-text justify-end">
+              <div class="card-title">Проживание</div>
+              <div class="card-description">Мы знаем, как важен здоровый сон для студентов, поэтому тебя ждёт уютная
+                комната и тёплое спальное место. Также в комнатах самые стойкие смогут продолжить вечер со своей
+                компанией!</div>
             </div>
 
 
           </div>
-          <div class="transfer"></div>
-          <div class="food"></div>
-          <div class="welcome"></div>
-          <div class="program"></div>
-          <div class="show"></div>
-          <div class="night"></div>
-          <div class="photo"></div>
+          <div class="transfer">
+            <div class="card-text">
+              <div class="card-title">Трансфер туда и обратно</div>
+              <div class="card-description">Тебе не придётся думать о том, как доехать до места проведения или добраться
+                до метро после Посвята.
+              </div>
+            </div>
+          </div>
+          <div class="food">
+            <div class="card-text">
+              <div class="card-title">Ужин и завтрак в формате шведского стола</div>
+              <div class="card-description">Собираешься много общаться, петь и танцевать? Хочешь, чтобы сил хватило до
+                утра? Тогда шведский стол со вкусной полезной едой – то, что нужно!
+              </div>
+            </div>
+          </div>
+          <div class="welcome">
+            <div class="card-text">
+              <div class="card-title">Велком-программа</div>
+              <div class="card-description">Первые знакомства, неповторимые задания и много-много сюрпризов помогут тебе
+                собраться с мыслями и погрузиться в атмосферу американской ярмарки.</div>
+            </div>
+          </div>
+          <div class="program">
+            <div class="card-text">
+              <div class="card-title">Основная программа</div>
+              <div class="card-description">Командная игра? Сюжетная линия, погружающая в атмосферу с каждой секундой
+                всё больше? Изумительный поворот событий? На Посвяте возможно всё и сразу!</div>
+            </div>
+          </div>
+          <div class="show">
+            <div class="card-text">
+              <div class="card-title">Яркое шоу</div>
+              <div class="card-description">Выступление музыкальной группы, тематический танец, ритуал посвящения в
+                студенты — всё это организаторы подготовили для тебя!
+              </div>
+            </div>
+          </div>
+          <div class="night">
+            <div class="card-text">
+              <div class="card-title">Ночная программа</div>
+              <div class="card-description">Дискотека, гитарники, неповторимые задания и ночные точки для тех, кто любит
+                давать волю эмоциям, – все это будет на Посвяте!
+              </div>
+            </div>
+          </div>
+          <div class="photo">
+            <div class="card-text">
+              <div class="card-title">Фотозоны</div>
+              <div class="card-description">Благодаря фотографиям ты сможешь освежить в памяти моменты вечера! Помогут в
+                этом наши фотографы. А селфизоны созданы для того, чтобы ты точно подобрал нужный ракурс!
+              </div>
+            </div>
+          </div>
         </div>
         <div class="partners">
 
@@ -77,6 +127,8 @@ export default defineComponent({
 }
 
 .background {
+  pointer-events: none;
+
   &-wrapper {
     position: absolute;
     top: 0;
@@ -147,21 +199,72 @@ export default defineComponent({
   }
 }
 
+.title {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 70px;
+  line-height: 100%;
+
+  /* or 96px */
+
+  text-transform: uppercase;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  color: #EFB515;
+}
+
 .cost {
   background: #212121;
 
-  .title {
-    font-style: normal;
-    font-weight: 900;
-    font-size: 70px;
-    line-height: 100%;
+  .card {
+    &-text {
+      width: 50%;
+      //float: right;
+    }
+    &-title {
+      font-weight: 900;
+      font-size: 48px;
+      line-height: 100%;
+      /* identical to box height, or 48px */
 
-    /* or 96px */
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: $secondary;
+    }
 
-    text-transform: uppercase;
-    font-feature-settings: 'pnum' on, 'lnum' on;
+    &-description {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 100%;
+      /* or 32px */
 
-    color: #EFB515;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: $accent;
+    }
   }
+}
+.accomodation {
+  float: right;
+}
+.transfer {
+
+}
+.food {
+
+}
+.welcome {
+
+}
+.programm {
+
+}
+.show {
+
+}
+.night {
+
+}
+.photo {
+
 }
 </style>
