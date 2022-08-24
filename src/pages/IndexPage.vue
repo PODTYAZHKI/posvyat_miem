@@ -177,9 +177,23 @@
         </div>
       </div>
     </div>
-    <div class="partners">
+    <div class="footer">
+        <div class="end wrapper q-pt-lg q-pb-lg flex row flex-start">
+          <div style="width:70%">
+            <div class="footer-title q-pb-sm">Пока ты читал это сообщение, на Посвят зарегистрировались два человека</div>
+            <div class="footer-text">Не отставай – бронируй место прямо сейчас!</div>
+          </div>
+          <div class="q-pt-xl q-pb-lg" style="width:30%">
+            <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" />
+          </div>
+        </div>
 
-    </div>
+        <div class="dec">
+
+          <q-img src="src/assets/footer.png" class="lines"/>
+        </div>
+
+      </div>
 
 
 
