@@ -16,11 +16,46 @@
     <div class="background-wrapper">
       <q-img src="src/assets/background-1.png" class="background" />
       <div class="afterIntro">
-        <div class="whatIs">
-          <!-- начинать тут -->
+        <div class="whatIs wrapper flex row flex-start q-pb-xl">
+          <div style="width:50%">
+            <div class="title q-pt-xl q-pb-md">
+              что такое посвят?
+            </div>
+            <div class="description">
+              Посвят – это, возможно, первое яркое событие в жизни каждого студента! 
+              Тебя ждут и диалоги тет-а-тет с одногруппниками, и нон-стоп танцы до утра, и даже highway to hell, 
+              если ты сильно захочешь победить в конкурсах.<br><br>
+              В Telegram-канале Посвята — закулисье подготовки, а всю важную информацию ты найдешь в группе ВКонтакте и боте. 
+              Пропустить событие, которое бывает раз в жизни, — преступление. Скорее садись на поезд в студенчество!
+            </div>
+            <q-btn no-caps label="Поехали!" class="btn btn-go q-mt-lg q-mr-md" />
+          </div>
+          <div class="q-pt-xl q-pb-md" style="width:50%">
+            <div>
+              <q-img src="src/assets/des.png" class="picture" /> 
+            </div>
+          </div>
         </div>
-        <div class="partners">
+
+        <div class="partners" style="">
+          <div class="slider no-js">
+            <button class="prew">prew</button>
+            <button class="next">next</button>
+
+            <div class="clider_list-wrap">
+              <ul class="slider_list">
+                <li class="slider_item"><q-img src="src/assets/partners1.png" style="width: 300px"/></li>
+                <li class="slider_item"><q-img src="src/assets/partners2.png" style="width: 300px"/></li>
+                <li class="slider_item"><q-img src="src/assets/partners1.png" style="width: 300px"/></li>
+                <li class="slider_item"><q-img src="src/assets/partners2.png" style="width: 300px"/></li>
+                <li class="slider_item"><q-img src="src/assets/partners1.png" style="width: 300px"/></li>
+                <li class="slider_item"><q-img src="src/assets/partners2.png" style="width: 300px"/></li>
+              </ul>
+            </div>
+            
+          </div>
         </div>
+
         <div class="cost wrapper flex flex-center column">
 
           <div class="title flex flex-center q-pt-xl q-pb-md">
@@ -123,9 +158,26 @@
             </div>
           </div>
         </div>
-        <div class="partners">
+        <div class="present">
 
         </div>
+      </div>
+      <div class="footer">
+        <div class="end wrapper q-pt-lg q-pb-lg flex row flex-start">
+          <div style="width:70%"> 
+            <div class="footer-title q-pb-sm">Пока ты читал это сообщение, на Посвят зарегистрировались два человека</div>
+            <div class="footer-text">Не отставай – бронируй место прямо сейчас!</div>
+          </div>
+          <div class="q-pt-xl q-pb-lg" style="width:30%">
+            <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" />
+          </div>
+        </div>
+        
+        <div class="dec">
+          
+          <q-img src="src/assets/footer.png" class="lines"/>
+        </div>
+        
       </div>
     </div>
 
@@ -134,7 +186,7 @@
 
     </div> -->
 
-
+   
 
 
 
@@ -229,6 +281,20 @@ export default defineComponent({
     color: #F9824F;
     background: #212121;
   }
+
+  &-go {
+    border: 4px solid #0F9F84;
+    border-radius: 16px;
+    color: #0F9F84;
+    background: #212121;
+  }
+
+  &-go:hover {
+    border: 4px solid #13E0B9;
+    border-radius: 16px;
+    color: #13E0B9;
+    background: #212121;
+  }
 }
 
 .title {
@@ -243,6 +309,80 @@ export default defineComponent({
   font-feature-settings: 'pnum' on, 'lnum' on;
 
   color: #EFB515;
+}
+
+.whatIs {
+  background: #212121;
+
+  .title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 70px;
+    line-height: 100%;
+
+    /* or 96px */
+
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #EFB515;
+  }
+
+  .description {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 100%;
+      /* or 32px */
+
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: $accent;
+    }
+
+}
+
+.partners{
+  padding-top: 25px;
+  background: #F1E0C6;
+}
+
+.slider_list-wrap {
+  overflow: hidden;
+}
+
+.slider_list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.slider_item {
+  flex-basis: 100%;
+}
+
+.no-js .prew,
+.no-js .next {
+  display: none;
+}
+
+.no-js .slider_list-wrap {
+  overflow: initial;
+}
+
+.no-js .slider_list {
+  overflow-x: auto;
+}
+
+/* Скрываем scrollbar для Chrome, Safari и Opera */
+.slider_list::-webkit-scrollbar {
+  display: none;
+}
+ 
+/* Скрываем scrollbar для IE, Edge и Firefox */
+.slider_list {
+  -ms-overflow-style: none;  /* IE и Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .cost {
@@ -304,6 +444,51 @@ export default defineComponent({
       position: relative;
     }
   }
+
+}
+
+.footer{
+  &-title {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 105%;
+    /* or 38px */
+
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #EE4D07;
+  }
+  &-text {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    /* identical to box height, or 32px */
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #212121;
+  }
+
+}
+
+.end{
+  background: #F1E0C6;
+}
+
+.dec {
+  height:389px;
+  background: #212121;
+}
+
+.lines {
+  width: 100%;
+  position: absolute;
+  top: 5930px;
 
 }
 
