@@ -592,4 +592,49 @@ body.screen--xl {
     font-size: 40px;
   }
 }
+
+.footer{
+  &-title {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 105%;
+    /* or 38px */
+
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #EE4D07;
+  }
+  &-text {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    /* identical to box height, or 32px */
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #212121;
+  }
+
+}
+
+.end{
+  background: #F1E0C6;
+}
+
+.dec {
+  height:389px;
+  background: #212121;
+}
+
+.lines {
+  width: 100%;
+  position: absolute;
+  top: 5930px;
+
+}
 </style>
