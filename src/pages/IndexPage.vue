@@ -178,22 +178,22 @@
       </div>
     </div>
     <div class="footer">
-        <div class="end wrapper q-pt-lg q-pb-lg flex row flex-start">
-          <div style="width:70%">
-            <div class="footer-title q-pb-sm">Пока ты читал это сообщение, на Посвят зарегистрировались два человека</div>
-            <div class="footer-text">Не отставай – бронируй место прямо сейчас!</div>
-          </div>
-          <div class="q-pt-xl q-pb-lg" style="width:30%">
-            <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" />
-          </div>
+      <div class="end wrapper q-pt-lg q-pb-lg flex row flex-start">
+        <div style="width:70%">
+          <div class="footer-title q-pb-sm">Пока ты читал это сообщение, на Посвят зарегистрировались два человека</div>
+          <div class="footer-text">Не отставай – бронируй место прямо сейчас!</div>
         </div>
-
-        <div class="dec">
-
-          <q-img src="src/assets/footer.png" class="lines"/>
+        <div class="q-pt-xl q-pb-lg" style="width:30%">
+          <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" />
         </div>
-
       </div>
+
+      <div class="dec">
+
+        <q-img src="src/assets/footer.png" class="lines" />
+      </div>
+
+    </div>
 
 
 
@@ -327,6 +327,82 @@ onMounted(() => {
     color: #F9824F;
     background: #212121;
   }
+}
+
+.whatIs {
+  background: #212121;
+
+  .title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 70px;
+    line-height: 100%;
+
+    /* or 96px */
+
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #EFB515;
+  }
+
+  .description {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    /* or 32px */
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: $accent;
+  }
+
+}
+
+.partners {
+  padding-top: 25px;
+  background: #F1E0C6;
+}
+
+.slider_list-wrap {
+  overflow: hidden;
+}
+
+.slider_list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.slider_item {
+  flex-basis: 100%;
+}
+
+.no-js .prew,
+.no-js .next {
+  display: none;
+}
+
+.no-js .slider_list-wrap {
+  overflow: initial;
+}
+
+.no-js .slider_list {
+  overflow-x: auto;
+}
+
+/* Скрываем scrollbar для Chrome, Safari и Opera */
+.slider_list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Скрываем scrollbar для IE, Edge и Firefox */
+.slider_list {
+  -ms-overflow-style: none;
+  /* IE и Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .title {
