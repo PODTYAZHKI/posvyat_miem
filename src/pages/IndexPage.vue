@@ -24,10 +24,57 @@
 
 
 
-    <div class="whatIs">
-
+    <div class="whatIs wrapper flex row flex-start q-pb-xl">
+      <div style="width:50%">
+        <div class="title q-pt-xl q-pb-md">
+          что такое посвят?
+        </div>
+        <div class="description">
+          Посвят – это, возможно, первое яркое событие в жизни каждого студента!
+          Тебя ждут и диалоги тет-а-тет с одногруппниками, и нон-стоп танцы до утра, и даже highway to hell,
+          если ты сильно захочешь победить в конкурсах.<br><br>
+          В Telegram-канале Посвята — закулисье подготовки, а всю важную информацию ты найдешь в группе ВКонтакте и
+          боте.
+          Пропустить событие, которое бывает раз в жизни, — преступление. Скорее садись на поезд в студенчество!
+        </div>
+        <q-btn no-caps label="Поехали!" class="btn btn-go q-mt-lg q-mr-md" />
+      </div>
+      <div class="q-pt-xl q-pb-md" style="width:50%">
+        <div>
+          <q-img src="src/assets/des.png" class="picture" />
+        </div>
+      </div>
     </div>
-    <div class="partners">
+
+    <div class="partners" style="">
+      <div class="slider no-js">
+        <button class="prew">prew</button>
+        <button class="next">next</button>
+
+        <div class="clider_list-wrap">
+          <ul class="slider_list">
+            <li class="slider_item">
+              <q-img src="src/assets/partners1.png" style="width: 300px" />
+            </li>
+            <li class="slider_item">
+              <q-img src="src/assets/partners2.png" style="width: 300px" />
+            </li>
+            <li class="slider_item">
+              <q-img src="src/assets/partners1.png" style="width: 300px" />
+            </li>
+            <li class="slider_item">
+              <q-img src="src/assets/partners2.png" style="width: 300px" />
+            </li>
+            <li class="slider_item">
+              <q-img src="src/assets/partners1.png" style="width: 300px" />
+            </li>
+            <li class="slider_item">
+              <q-img src="src/assets/partners2.png" style="width: 300px" />
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </div>
     <div class="cost-wrapper">
       <div class="title flex flex-center wrapper">
@@ -292,14 +339,15 @@ onMounted(() => {
   &-wrapper {
     position: relative;
     height: 308vw;
-    .title{
+
+    .title {
       background: #212121;
     }
 
   }
 
   &-background {
-   z-index: 1;
+    z-index: 1;
   }
 
   &-text {
