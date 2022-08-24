@@ -1,22 +1,36 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHr lpR fFf">
     <q-header elevated>
-      <q-toolbar style="padding-left: 160px; padding-right: 160px;">
+      <q-toolbar style="padding-left: 10%; padding-right: 10%;">
         <q-avatar size="60px" class="q-my-md">
           <img src="src/assets/logo.svg">
         </q-avatar>
         <q-space />
-        <div class="links flex">
-          <a v-for="link in menu_links" :key="link.name" class="q-px-md text-accent" cursor-pointer>
+        <div class="links flex" v-if="$q.screen.gt.xs">
+          <a v-for="link in menu_links" :key="link.name" class="q-px-md text-accent">
             {{ link.field }}
           </a>
         </div>
-        <!-- <q-toolbar-title>Quasar Framework</q-toolbar-title> -->
         <q-space />
-        <q-btn color="secondary" icon="img:src/assets/vk.png" padding="10px 10px" class="q-mr-md"/>
-        <q-btn color="secondary" icon="img:src/assets/telegram.png" padding="10px 10px" />
+        <q-btn color="secondary" icon="img:src/assets/vk.png" padding="10px 10px" class="q-mr-md"
+          v-if="$q.screen.gt.xs" />
+        <q-btn color="secondary" icon="img:src/assets/telegram.png" padding="10px 10px" v-if="$q.screen.gt.xs" />
+        <q-btn flat @click="drawerRight = !drawerRight" round dense icon="menu" v-if="$q.screen.lt.sm" />
       </q-toolbar>
     </q-header>
+    <q-drawer side="right" v-model="drawerRight" show-if-above bordered overlay :width="200" v-if="$q.screen.lt.sm">
+      <q-scroll-area class="fit">
+        <div class="q-pa-md">
+          <q-btn color="secondary" icon="img:src/assets/vk.png" padding="10px 10px" class="q-mr-md" />
+          <q-btn color="secondary" icon="img:src/assets/telegram.png" padding="10px 10px" />
+          <div class="links flex column" >
+            <a v-for="link in menu_links" :key="link.name" class=" text-accent">
+              {{ link.field }}
+            </a>
+          </div>
+        </div>
+      </q-scroll-area>
+    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -25,31 +39,39 @@
 </template>
 
 <script setup>
-// import { defineComponent, ref } from 'vue'
+import { ref } from 'vue'
+// import { dom } from 'quasar'
+// const { height, width } = dom
 // import EssentialLink from 'components/EssentialLink.vue'
+const drawerRight = ref(false)
 const menu_links = [
   {
     name: 'about',
     field: 'О нас'
   },
   {
-    name: 'Cost',
-    field: 'Стоимость'
-  },
-  {
     name: 'Partners',
     field: 'Партнёры'
+  },
+  {
+    name: 'Cost',
+    field: 'Стоимость'
   },
   {
     name: 'Galary',
     field: 'Фото'
   }
 ]
+// const cost = ref()
+// cost.value = height('cost')
 
 
 
 </script>
 <style scoped lang="scss">
+.drawer {
+  background-color: #212121 !important;
+}
 .btn {
   &-link {
     //background: white;
