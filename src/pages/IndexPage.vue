@@ -327,6 +327,19 @@ onMounted(() => {
     color: #F9824F;
     background: #212121;
   }
+  &-go {
+    border: 4px solid #0F9F84;
+    border-radius: 16px;
+    color: #0F9F84;
+    background: #212121;
+  }
+
+  &-go:hover {
+    border: 4px solid #13E0B9;
+    border-radius: 16px;
+    color: #13E0B9;
+    background: #212121;
+  }
 }
 
 .whatIs {
