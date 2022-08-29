@@ -12,7 +12,7 @@
             Скорее регистрируйся и проведи <br> лучшую ночь этой осени вместе с нами!
           </div>
           <div class="buttons flex justify-center">
-            <q-btn no-caps label="Регистрация" class="btn btn-reg" />
+            <q-btn no-caps label="Регистрация" class="btn btn-reg" @click="goTo" />
             <q-btn no-caps label="Узнать больше" class="btn btn-more" />
           </div>
         </div>
@@ -188,6 +188,8 @@ import 'swiper/scss';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay } from 'swiper';
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const swiper_modules = [Autoplay]
 const partners = [
   {
@@ -218,6 +220,9 @@ onMounted(() => {
   window.addEventListener('resize', updateWidth);
   console.log('mounted')
 })
+function goTo() {
+  router.push({path: '/registration'})
+}
 
 
 
