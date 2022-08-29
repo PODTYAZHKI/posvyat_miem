@@ -19,13 +19,13 @@
         <q-btn flat @click="drawerRight = !drawerRight" round dense icon="menu" v-if="$q.screen.lt.sm" />
       </q-toolbar>
     </q-header>
-    <q-drawer side="right" v-model="drawerRight" show-if-above bordered overlay :width="200" v-if="$q.screen.lt.sm">
-      <q-scroll-area class="fit">
+    <q-drawer side="right" v-model="drawerRight" show-if-above bordered overlay :width="200" v-if="$q.screen.lt.sm" >
+      <q-scroll-area class="fit drawer" >
         <div class="q-pa-md">
           <q-btn color="secondary" icon="img:src/assets/vk.png" padding="10px 10px" class="q-mr-md" />
           <q-btn color="secondary" icon="img:src/assets/telegram.png" padding="10px 10px" />
           <div class="links flex column">
-            <a v-for="link in menu_links" :key="link.name" class=" text-accent">
+            <a href="#" v-for="link in menu_links" :key="link.name" class="links text-accent">
               {{  link.field  }}
             </a>
           </div>
@@ -84,7 +84,11 @@ const menu_links = [
 }
 
 .drawer {
-  background-color: #212121 !important;
+  background-color: #212121;
+  .links {
+    padding-top: 10px;
+    font-size: 30px;
+  }
 }
 
 .btn {

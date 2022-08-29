@@ -1,5 +1,5 @@
 <template>
-  <q-page class="full-height" color="primary">
+  <q-page class="full-height page" color="primary">
     <div class="intro-wrapper" ref="intro">
       <q-img src="src/assets/background-1.png" class="background" />
       <div class="intro text-accent wrapper flex justify-center items-center" ref="intro">
@@ -151,22 +151,29 @@
       </div>
     </div>
     <div class="pictures">
-      <div class="title  wrapper q-py-xl">
+      <div class="title  wrapper">
         В подарок идут...
       </div>
-      <!-- <Swiper :modules="swiper_modules" :grid="{ rows: 2, fill: 'row'}" :slidesPerView="3">
-        <SwiperSlide v-for="partner of partners" :key="partner.src">
-          <q-img :src="partner.src" class="picture " />
+      <Swiper :modules="swiper_modules" :rewind="true" :autoplay="{ delay: 0 }" :speed="5000" class="sipe">
+        <SwiperSlide>
+          <q-img src="src/assets/pictures/picture-1.png" />
         </SwiperSlide>
-      </Swiper> -->
+        <SwiperSlide>
+          <q-img src="src/assets/pictures/picture-2.png" />
+        </SwiperSlide>
+      </Swiper>
+      <div class="subtitle text-accent wrapper">
+        Больше фото с Посвята'21 можно найти
+          <a href="#">здесь</a>
+      </div>
     </div>
     <div class="footer">
-      <div class="end wrapper row q-py-xl">
-        <div style="width:70%">
-          <div class="footer-title q-pb-sm">Пока ты читал это сообщение, на Посвят зарегистрировались два человека</div>
+      <div class="end wrapper row">
+        <div class="flex align-center" style="width:70%">
+          <div class="footer-title">Пока ты читал это сообщение, на Посвят зарегистрировались два человека</div>
           <div class="footer-text">Не отставай – бронируй место прямо сейчас!</div>
         </div>
-        <div class="column justify-center" style="width:30%">
+        <div class="column justify-center items-end" style="width:30%">
           <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" />
         </div>
       </div>
@@ -179,10 +186,9 @@
 <script setup>
 import 'swiper/scss';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, Grid } from 'swiper';
-import "swiper/css/grid";
+import { Autoplay } from 'swiper';
 import { ref, onMounted } from 'vue'
-const swiper_modules = [Autoplay, Grid]
+const swiper_modules = [Autoplay]
 const partners = [
   {
     src: 'src/assets/partners1.png',
@@ -210,12 +216,14 @@ function updateWidth() {
 }
 onMounted(() => {
   window.addEventListener('resize', updateWidth);
+  console.log('mounted')
 })
 
 
 
 </script>
 <style lang="scss" scoped>
+
 .wrapper {
   padding-left: 10%;
   padding-right: 10%;
@@ -409,7 +417,7 @@ onMounted(() => {
   font-weight: 900;
   font-size: 5.4vw;
   line-height: 100%;
-  background: #212121;
+  //background: #212121;
 
   /* or 96px */
 
@@ -526,26 +534,42 @@ onMounted(() => {
     margin-top: 27.78vw;
   }
 }
-
+.pictures {
+  .title {
+    padding-top: 2.9vw;
+    padding-bottom: 2.9vw;
+  }
+  .subtitle {
+    font-weight: 600;
+    font-size: 1.85vw;
+    line-height: 100%;
+    padding-top: 0.58vw;
+    padding-bottom: 2.32vw;
+    a {
+      color:#EFB515
+    }
+  }
+  background: #212121;
+  .sipe {
+    height: 53.16vw;
+  }
+}
 .picture {
   &-wrapper {
     width: 50%;
   }
 }
-
-
-
-
-
-
 .footer {
-  //height: 12.5vw;
-  //position: relative;
+  height: 41.67vw;
+  position: relative;
+  background: #212121;
 
   &-title {
     font-weight: 900;
     font-size: 2.08vw;
     line-height: 105%;
+    display: flex;
+    align-items: flex-end;
     /* or 38px */
 
     text-transform: uppercase;
@@ -571,13 +595,15 @@ onMounted(() => {
 
 .end {
   background: #F1E0C6;
+  height: 12.5vw;
 
 }
 
 .lines {
   width: 100%;
-  //position: absolute;
-  background: #212121;
+  position: absolute;
+  top: 8.98vw;
+
   //bottom: 0 //top: 5930px;
 
 }
