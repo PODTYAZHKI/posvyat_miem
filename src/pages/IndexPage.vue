@@ -1,20 +1,18 @@
 <template>
   <q-page class="full-height" color="primary">
     <div class="intro-wrapper" ref="intro">
-      <div class="background-wrapper" ref="background">
-        <q-img src="src/assets/background-1.png" class="background" />
-      </div>
-      <div class="intro text-accent wrapper" :class="[$q.screen.lt.lg && $q.screen.gt.xs ? 'q-pt-xl' : 'q-pt-sm']"
-        ref="intro">
-        <div class="suptitle q-mb-md text-center">
-          1-2 Октября
-        </div>
-        <q-img src="src/assets/title.png" class="title q-mb-md" />
-        <div class="subtitle flex flex-center column">
-          Скорее регистрируйся и проведи <br> лучшую ночь этой осени вместе с нами!
-          <div class="q-mt-md row justify-center">
-            <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" />
-            <!-- :class="[$q.screen.gt.xs ? 'q-mr-md' : '']" -->
+      <q-img src="src/assets/background-1.png" class="background" />
+      <div class="intro text-accent wrapper flex justify-center items-center" ref="intro">
+        <div class="intro-text ">
+          <div class="suptitle text-center">
+            1-2 Октября
+          </div>
+          <q-img src="src/assets/title.png" class="title " />
+          <div class="subtitle flex flex-center column">
+            Скорее регистрируйся и проведи <br> лучшую ночь этой осени вместе с нами!
+          </div>
+          <div class="buttons flex justify-center">
+            <q-btn no-caps label="Регистрация" class="btn btn-reg" />
             <q-btn no-caps label="Узнать больше" class="btn btn-more" />
           </div>
         </div>
@@ -24,8 +22,8 @@
 
 
 
-    <div class="whatIs wrapper flex row flex-start q-pb-xl">
-      <div style="width:50%">
+    <div class="whatIs wrapper flex row items-center q-pb-xl">
+      <div style="width:50%" class="whatIs-text">
         <div class="title q-pt-xl q-pb-md">
           что такое посвят?
         </div>
@@ -39,52 +37,27 @@
         </div>
         <q-btn no-caps label="Поехали!" class="btn btn-go q-mt-lg q-mr-md" />
       </div>
-      <div class="q-pt-xl q-pb-md" style="width:50%">
-        <div>
-          <q-img src="src/assets/des.png" class="picture" />
-        </div>
+      <div class="whatIs-picture" style="width:50%; height: 100%;">
+        <q-img :src="whatIsHover ? 'src/assets/des-1.png' : 'src/assets/des.png'" class="picture"
+          @mouseover="whatIsHover = true" @mouseleave="whatIsHover = false" />
       </div>
     </div>
 
-    <div class="partners" style="">
-      <div class="slider no-js">
-        <button class="prew">prew</button>
-        <button class="next">next</button>
-
-        <div class="clider_list-wrap">
-          <ul class="slider_list">
-            <li class="slider_item">
-              <q-img src="src/assets/partners1.png" style="width: 300px" />
-            </li>
-            <li class="slider_item">
-              <q-img src="src/assets/partners2.png" style="width: 300px" />
-            </li>
-            <li class="slider_item">
-              <q-img src="src/assets/partners1.png" style="width: 300px" />
-            </li>
-            <li class="slider_item">
-              <q-img src="src/assets/partners2.png" style="width: 300px" />
-            </li>
-            <li class="slider_item">
-              <q-img src="src/assets/partners1.png" style="width: 300px" />
-            </li>
-            <li class="slider_item">
-              <q-img src="src/assets/partners2.png" style="width: 300px" />
-            </li>
-          </ul>
-        </div>
-
-      </div>
+    <div class="partners  ">
+      <Swiper :modules="swiper_modules" :slides-per-view="5" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000">
+        <SwiperSlide v-for="partner of partners" :key="partner.src">
+          <q-img :src="partner.src" class="picture " />
+        </SwiperSlide>
+      </Swiper>
     </div>
     <div class="cost-wrapper">
-      <div class="title flex flex-center wrapper">
+      <div class="title flex flex-center wrapper q-pt-xl">
         Что входит в стоимость?
       </div>
-      <div class="cost   flex flex-center column">
+      <div class="cost flex flex-center column">
         <q-img src="src/assets/cost.png" class="cost-background" />
         <div class="cost-text wrapper column">
-
-          <div class="accomodation row ">
+          <div class=" accomodation row ">
             <div class="picture-wrapper">
 
             </div>
@@ -95,7 +68,7 @@
                 компанией!</div>
             </div>
           </div>
-          <div class="transfer row" style="margin-top: 450px;">
+          <div class="transfer row">
 
             <div class="card-text">
               <div class="card-title">Трансфер туда и обратно</div>
@@ -108,7 +81,7 @@
 
             </div>
           </div>
-          <div class="food row" style="margin-top: 250px;">
+          <div class="food row">
             <div class="picture-wrapper">
 
             </div>
@@ -119,7 +92,7 @@
               </div>
             </div>
           </div>
-          <div class="welcome row" style="margin-top: 250px;">
+          <div class="welcome row">
 
             <div class="card-text">
               <div class="card-title">Велком-программа</div>
@@ -131,7 +104,7 @@
 
             </div>
           </div>
-          <div class="program row" style="margin-top: 350px;">
+          <div class="program row">
             <div class="picture-wrapper">
 
             </div>
@@ -141,7 +114,7 @@
                 всё больше? Изумительный поворот событий? На Посвяте возможно всё и сразу!</div>
             </div>
           </div>
-          <div class="show row" style="margin-top: 400px;">
+          <div class="show row">
             <div class="card-text">
               <div class="card-title">Яркое шоу</div>
               <div class="card-description">Выступление музыкальной группы, тематический танец, ритуал посвящения в
@@ -152,7 +125,7 @@
 
             </div>
           </div>
-          <div class="night row" style="margin-top: 270px;">
+          <div class="night row">
             <div class="picture-wrapper">
             </div>
             <div class="card-text">
@@ -163,7 +136,7 @@
               </div>
             </div>
           </div>
-          <div class="photo row" style="margin-top: 300px; padding-bottom: 350px">
+          <div class="photo row">
             <div class="card-text">
               <div class="card-title">Фотозоны</div>
               <div class="card-description">Благодаря фотографиям ты сможешь освежить в памяти моменты вечера! Помогут
@@ -177,71 +150,69 @@
         </div>
       </div>
     </div>
+    <div class="pictures">
+      <div class="title  wrapper q-py-xl">
+        В подарок идут...
+      </div>
+      <!-- <Swiper :modules="swiper_modules" :grid="{ rows: 2, fill: 'row'}" :slidesPerView="3">
+        <SwiperSlide v-for="partner of partners" :key="partner.src">
+          <q-img :src="partner.src" class="picture " />
+        </SwiperSlide>
+      </Swiper> -->
+    </div>
     <div class="footer">
-      <div class="end wrapper q-pt-lg q-pb-lg flex row flex-start">
+      <div class="end wrapper row q-py-xl">
         <div style="width:70%">
           <div class="footer-title q-pb-sm">Пока ты читал это сообщение, на Посвят зарегистрировались два человека</div>
           <div class="footer-text">Не отставай – бронируй место прямо сейчас!</div>
         </div>
-        <div class="q-pt-xl q-pb-lg" style="width:30%">
+        <div class="column justify-center" style="width:30%">
           <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" />
         </div>
       </div>
-
-      <div class="dec">
-
-        <q-img src="src/assets/footer.png" class="lines" />
-      </div>
-
+      <q-img src="src/assets/footer.png" class="lines" />
     </div>
-
-
-
-    <!-- <div class="lines" style="margin-top: 20px">
-      <q-img src="src/assets/lines.png"/>
-
-    </div> -->
-
-
-
-
 
   </q-page>
 </template>
 
 <script setup>
-
-// import { dom } from 'quasar'
-import { ref, onMounted, onUpdated } from 'vue'
-// const { height, width } = dom
-// const { ready } = dom
-// const { css } = dom
-const background = ref()
-const intro = ref()
-onUpdated(() => {
-  console.log(background.value)
-  console.log(background.value.clientHeight)
-})
+import 'swiper/scss';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Grid } from 'swiper';
+import "swiper/css/grid";
+import { ref, onMounted } from 'vue'
+const swiper_modules = [Autoplay, Grid]
+const partners = [
+  {
+    src: 'src/assets/partners1.png',
+  },
+  {
+    src: 'src/assets/partners2.png',
+  },
+  {
+    src: 'src/assets/partners3.png',
+  },
+  {
+    src: 'src/assets/partners4.png',
+  },
+  {
+    src: 'src/assets/partners5.png',
+  },
+  {
+    src: 'src/assets/partners6.png',
+  }
+]
+const whatIsHover = ref(false)
+const width = ref(0)
+function updateWidth() {
+  width.value = window.innerWidth;
+}
 onMounted(() => {
-  console.log(background.value)
-  console.log(background.value.offsettHeight)
-  // css(intro.value, {
-  //   height: `${height(background.value.$el)}px`
-  // })
-
-
+  window.addEventListener('resize', updateWidth);
 })
-// const
-// import { scroll } from 'quasar'
-// const { getScrollTarget, setVerticalScrollPosition } = scroll
 
-// takes an element object
-// function scrollToElement(el) {
-//   const target = getScrollTarget(el)
-//   const offset = el.offsetTop
-//   const duration = 1000
-//   setVerticalScrollPosition(target, offset, duration)
-// }
+
 
 </script>
 <style lang="scss" scoped>
@@ -253,63 +224,90 @@ onMounted(() => {
 
 
 .intro {
+  position: absolute;
+  top: 0;
   width: 100%;
+  height: 52.75vw;
+
+  &-text {
+    width: 100%;
+  }
+
+  .suptitle {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2.3vw;
+    line-height: 2.3vw;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    // margin-bottom: 20px;
+    margin-bottom: 1.39vw;
+  }
+
+  .subtitle {
+    font-weight: 600;
+    font-size: 2.3vw;
+    line-height: 100%;
+    /* or 40px */
+
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    // margin-top: 40px;
+    margin-top: 2.78vw;
+    margin-bottom: 2.78vw;
+  }
 
   //z-index: 1;
   //margin-top: 50px;
   &-wrapper {
-    position: relative;
+
     width: 100%;
-    height: 100vw * 0.68;
+    //height: 68vw;
+    //background-color: #212121;
 
     .background {
+      position: relative;
 
-      &-wrapper {
-        display: block;
-        position: absolute;
-        pointer-events: none;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-      }
+      // &-wrapper {
+      //   //display: block;
+      //   //position: absolute;
+      //   pointer-events: none;
+      //   width: 100%;
+      //   height: 100%;
+      // }
     }
   }
 }
 
-.suptitle {
-  font-style: normal;
-  font-weight: 800;
-  font-size: 30px;
-  text-transform: uppercase;
-  font-feature-settings: 'pnum' on, 'lnum' on;
+
+.buttons {
+  &-wrapper {
+
+    width: 600px;
+  }
 }
 
-.subtitle {
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 100%;
-  /* or 40px */
-
-  text-align: center;
-  font-feature-settings: 'pnum' on, 'lnum' on;
-}
-
+//vw - 1727
 .btn {
-  border-radius: 16px;
+  // border-radius: 20px;
+  border-radius: 1.16vw;
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.6vw;
   line-height: 100%;
-  width: 40%;
+  width: 17.37vw;
+
+
   /* identical to box height, or 32px */
 
   font-feature-settings: 'pnum' on, 'lnum' on;
-  padding-right: 50px;
-  padding-left: 50px;
+  // padding-right: 2.9vw;
+  // padding-left: 2.9vw;
 
   &-reg {
     background: #EE4D07;
     color: #fff;
+    margin-right: 0.58vw;
   }
 
   &-reg:hover {
@@ -317,25 +315,27 @@ onMounted(() => {
   }
 
   &-more {
-    border: 4px solid #EE4D07;
+    border: 0.23vw solid #EE4D07;
     color: #EE4D07;
     background: #212121;
+    margin-left: 0.58vw;
   }
 
   &-more:hover {
-    border: 4px solid #F9824F;
+    border: 0.23vw solid #F9824F;
     color: #F9824F;
     background: #212121;
   }
+
   &-go {
-    border: 4px solid #0F9F84;
+    border: 0.23vw solid #0F9F84;
     border-radius: 16px;
     color: #0F9F84;
     background: #212121;
   }
 
   &-go:hover {
-    border: 4px solid #13E0B9;
+    border: 0.23vw solid #13E0B9;
     border-radius: 16px;
     color: #13E0B9;
     background: #212121;
@@ -344,12 +344,20 @@ onMounted(() => {
 
 .whatIs {
   background: #212121;
+  height: 100%;
+
+  &-text {}
+
+  &-picture {
+    .picture {}
+  }
 
   .title {
     font-style: normal;
     font-weight: 900;
-    font-size: 70px;
+    font-size: 5.4vw;
     line-height: 100%;
+
 
     /* or 96px */
 
@@ -362,7 +370,7 @@ onMounted(() => {
   .description {
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.9vw;
     line-height: 100%;
     /* or 32px */
 
@@ -373,49 +381,27 @@ onMounted(() => {
 }
 
 .partners {
-  padding-top: 25px;
+  //padding-top: 25px;
   background: #F1E0C6;
-}
+  height: 12.15vw;
 
-.slider_list-wrap {
-  overflow: hidden;
-}
+  .swiper {
+    height: 100%;
 
-.slider_list {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
+    &-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
 
-.slider_item {
-  flex-basis: 100%;
-}
+      .picture {
+        //object-fit: fill;
+        width: 16.27vw;
+      }
+    }
 
-.no-js .prew,
-.no-js .next {
-  display: none;
-}
+  }
 
-.no-js .slider_list-wrap {
-  overflow: initial;
-}
-
-.no-js .slider_list {
-  overflow-x: auto;
-}
-
-/* Скрываем scrollbar для Chrome, Safari и Opera */
-.slider_list::-webkit-scrollbar {
-  display: none;
-}
-
-/* Скрываем scrollbar для IE, Edge и Firefox */
-.slider_list {
-  -ms-overflow-style: none;
-  /* IE и Edge */
-  scrollbar-width: none;
-  /* Firefox */
 }
 
 .title {
@@ -423,6 +409,7 @@ onMounted(() => {
   font-weight: 900;
   font-size: 5.4vw;
   line-height: 100%;
+  background: #212121;
 
   /* or 96px */
 
@@ -441,7 +428,7 @@ onMounted(() => {
 
   &-wrapper {
     position: relative;
-    height: 308vw;
+
 
     .title {
       background: #212121;
@@ -456,9 +443,8 @@ onMounted(() => {
   &-text {
     position: absolute;
     top: 0;
-
-
-
+    height: 302.49vw;
+    z-index: 1;
   }
 
 
@@ -470,9 +456,9 @@ onMounted(() => {
 
     &-title {
       font-weight: 900;
-      font-size: 100vw*0.023;
+      font-size: 2.3vw;
       line-height: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 1.38vw;
       /* identical to box height, or 48px */
 
       font-feature-settings: 'pnum' on, 'lnum' on;
@@ -490,6 +476,55 @@ onMounted(() => {
       color: $accent;
     }
   }
+
+  .costs {
+    width: 100%;
+  }
+
+  // vw - 1440
+  .accomodation {
+    // margin-top: 160px;
+    margin-top: 11.11vw;
+  }
+
+  .transfer {
+    // margin-top: 420px;
+    margin-top: 29.17vw;
+  }
+
+  .food {
+    // margin-top: 300px;
+    margin-top: 20.83vw;
+  }
+
+  .welcome {
+    // margin-top: 300px;
+    margin-top: 20.83vw;
+  }
+
+  .program {
+    // margin-top: 350px;
+    margin-top: 25.31vw;
+  }
+
+  .show {
+    // margin-top: 450px;
+    margin-top: 31.25vw;
+  }
+
+  .night {
+    // margin-top: 400px;
+    margin-top: 27.78vw;
+  }
+
+  .photo {
+    .card-text {
+      width: 45%;
+    }
+
+    // margin-top: 400px;
+    margin-top: 27.78vw;
+  }
 }
 
 .picture {
@@ -498,107 +533,18 @@ onMounted(() => {
   }
 }
 
-.line {
-  width: 100%;
-  position: absolute;
-  top: 130px;
-}
 
-.accomodation {
-  margin-top: 100vw * 0.0578;
-}
 
-.transfer {}
 
-.food {}
 
-.welcome {}
 
-.programm {}
+.footer {
+  //height: 12.5vw;
+  //position: relative;
 
-.show {}
-
-.night {}
-
-.photo {}
-
-body.screen--xs {
-  .btn {
-    font-size: 10px;
-  }
-
-  .suptitle {
-    font-size: 15px;
-  }
-
-  .subtitle {
-    font-size: 15px;
-  }
-}
-
-body.screen--sm {
-  .btn {
-    font-size: 10px;
-  }
-
-  .suptitle {
-    font-size: 20px;
-  }
-
-  .subtitle {
-    font-size: 20px;
-  }
-}
-
-body.screen--md {
-  .btn {
-    font-size: 15px;
-  }
-
-  .suptitle {
-    font-size: 25px;
-  }
-
-  .subtitle {
-    font-size: 25px;
-  }
-}
-
-body.screen--lg {
-  .btn {
-    font-size: 20px;
-  }
-
-  .suptitle {
-    font-size: 30px;
-  }
-
-  .subtitle {
-    font-size: 30px;
-  }
-
-}
-
-body.screen--xl {
-  .btn {
-    font-size: 30px;
-  }
-
-  .suptitle {
-    font-size: 40px;
-  }
-
-  .subtitle {
-    font-size: 40px;
-  }
-}
-
-.footer{
   &-title {
-    font-family: 'Raleway';
-    font-style: normal;
     font-weight: 900;
-    font-size: 36px;
+    font-size: 2.08vw;
     line-height: 105%;
     /* or 38px */
 
@@ -607,11 +553,12 @@ body.screen--xl {
 
     color: #EE4D07;
   }
+
   &-text {
-    font-family: 'Raleway';
+
     font-style: normal;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 1.8vw;
     line-height: 100%;
     /* identical to box height, or 32px */
 
@@ -622,19 +569,16 @@ body.screen--xl {
 
 }
 
-.end{
+.end {
   background: #F1E0C6;
-}
 
-.dec {
-  height:389px;
-  background: #212121;
 }
 
 .lines {
   width: 100%;
-  position: absolute;
-  top: 5930px;
+  //position: absolute;
+  background: #212121;
+  //bottom: 0 //top: 5930px;
 
 }
 </style>

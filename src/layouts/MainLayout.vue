@@ -1,20 +1,21 @@
 <template>
   <q-layout view="lHr lpR fFf">
     <q-header elevated>
-      <q-toolbar style="padding-left: 10%; padding-right: 10%;">
-        <q-avatar size="60px" class="q-my-md">
-          <img src="src/assets/logo.svg">
-        </q-avatar>
+      <q-toolbar style="padding-left: 10%; padding-right: 10%; height: 8.45vw;">
+        <a href="#">
+          <q-avatar size="5.21vw" class="q-my-md">
+            <img src="src/assets/logo.svg">
+          </q-avatar>
+        </a>
         <q-space />
         <div class="links flex" v-if="$q.screen.gt.xs">
-          <a v-for="link in menu_links" :key="link.name" class="q-px-md text-accent">
-            {{ link.field }}
+          <a href="#" v-for="link in menu_links" :key="link.name" class="links text-accent q-mx-md">
+            {{  link.field  }}
           </a>
         </div>
         <q-space />
-        <q-btn color="secondary" icon="img:src/assets/vk.png" padding="10px 10px" class="q-mr-md"
-          v-if="$q.screen.gt.xs" />
-        <q-btn color="secondary" icon="img:src/assets/telegram.png" padding="10px 10px" v-if="$q.screen.gt.xs" />
+        <q-btn color="secondary" icon="img:src/assets/vk.png" class="q-mr-md header-btn" v-if="$q.screen.gt.xs" />
+        <q-btn color="secondary" icon="img:src/assets/telegram.png" v-if="$q.screen.gt.xs" class="header-btn" />
         <q-btn flat @click="drawerRight = !drawerRight" round dense icon="menu" v-if="$q.screen.lt.sm" />
       </q-toolbar>
     </q-header>
@@ -23,9 +24,9 @@
         <div class="q-pa-md">
           <q-btn color="secondary" icon="img:src/assets/vk.png" padding="10px 10px" class="q-mr-md" />
           <q-btn color="secondary" icon="img:src/assets/telegram.png" padding="10px 10px" />
-          <div class="links flex column" >
+          <div class="links flex column">
             <a v-for="link in menu_links" :key="link.name" class=" text-accent">
-              {{ link.field }}
+              {{  link.field  }}
             </a>
           </div>
         </div>
@@ -69,9 +70,23 @@ const menu_links = [
 
 </script>
 <style scoped lang="scss">
+.links {
+  font-weight: 600;
+  font-size: 1.39vw;
+  line-height: 100%;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.header-btn {
+  width: 3.47vw;
+  height: 3.47vw;
+}
+
 .drawer {
   background-color: #212121 !important;
 }
+
 .btn {
   &-link {
     //background: white;
