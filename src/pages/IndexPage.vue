@@ -22,7 +22,7 @@
 
 
 
-    <div class="whatIs wrapper flex row items-center q-pb-xl">
+    <div class="whatIs wrapper flex row items-center q-pb-xl" ref="about">
       <div style="width:50%" class="whatIs-text">
         <div class="title q-pt-xl q-pb-md">
           что такое посвят?
@@ -43,14 +43,14 @@
       </div>
     </div>
 
-    <div class="partners  ">
+    <div class="partners" ref="partner">
       <Swiper :modules="swiper_modules" :slides-per-view="5" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000">
         <SwiperSlide v-for="partner of partners" :key="partner.src">
           <q-img :src="partner.src" class="picture " />
         </SwiperSlide>
       </Swiper>
     </div>
-    <div class="cost-wrapper">
+    <div class="cost-wrapper" ref="cost">
       <div class="title flex flex-center wrapper q-pt-xl">
         Что входит в стоимость?
       </div>
@@ -150,11 +150,11 @@
         </div>
       </div>
     </div>
-    <div class="pictures">
+    <div class="pictures" ref="picture">
       <div class="title  wrapper">
         В подарок идут...
       </div>
-      <Swiper :modules="swiper_modules" :rewind="true" :autoplay="{ delay: 0 }" :speed="5000" class="sipe">
+      <Swiper :modules="swiper_modules" :rewind="true" :autoplay="{ delay: 0 }" :speed="10000" class="swipe">
         <SwiperSlide>
           <q-img src="src/assets/pictures/picture-1.png" />
         </SwiperSlide>
@@ -174,7 +174,7 @@
           <div class="footer-text">Не отставай – бронируй место прямо сейчас!</div>
         </div>
         <div class="column justify-center items-end" style="width:30%">
-          <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" />
+          <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" @click="goTo()" />
         </div>
       </div>
       <q-img src="src/assets/footer.png" class="lines" />
@@ -187,8 +187,14 @@
 import 'swiper/scss';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay } from 'swiper';
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUpdated } from 'vue'
 import { useRouter } from 'vue-router'
+import { scroll } from 'quasar'
+const { getVerticalScrollPosition, setVerticalScrollPosition } = scroll
+const about = ref()
+const partner = ref()
+const costs = ref()
+const picture = ref()
 const router = useRouter()
 const swiper_modules = [Autoplay]
 const partners = [
@@ -213,12 +219,12 @@ const partners = [
 ]
 const whatIsHover = ref(false)
 const width = ref(0)
-function updateWidth() {
-  width.value = window.innerWidth;
-}
 onMounted(() => {
-  window.addEventListener('resize', updateWidth);
+  // window.addEventListener('resize', updateWidth);
   console.log('mounted')
+})
+onUpdated(()=>{
+  console.log('updated')
 })
 function goTo() {
   router.push({path: '/registration'})
@@ -555,8 +561,8 @@ function goTo() {
     }
   }
   background: #212121;
-  .sipe {
-    height: 53.16vw;
+  .swipe {
+    height: 50.16vw;
   }
 }
 .picture {
