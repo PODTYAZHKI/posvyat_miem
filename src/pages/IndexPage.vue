@@ -1,19 +1,19 @@
 <template>
   <q-page class="full-height page" color="primary">
     <div class="intro-wrapper" ref="intro">
-      <q-img src="src/assets/background-1.png" class="background" />
+      <q-img src="~assets/images/background-1.png" class="background" />
       <div class="intro text-accent wrapper flex justify-center items-center" ref="intro">
         <div class="intro-text ">
           <div class="suptitle text-center">
             1-2 Октября
           </div>
-          <q-img src="src/assets/title.png" class="title " />
+          <q-img src="~assets/images/title.png" class="title " />
           <div class="subtitle flex flex-center column">
             Скорее регистрируйся и проведи <br> лучшую ночь этой осени вместе с нами!
           </div>
           <div class="buttons flex justify-center">
             <q-btn no-caps label="Регистрация" class="btn btn-reg" @click="goTo" />
-            <q-btn no-caps label="Узнать больше" class="btn btn-more" />
+            <q-btn no-caps label="Узнать больше" class="btn btn-more" @click="go" />
           </div>
         </div>
       </div>
@@ -38,15 +38,31 @@
         <q-btn no-caps label="Поехали!" class="btn btn-go q-mt-lg q-mr-md" />
       </div>
       <div class="whatIs-picture" style="width:50%; height: 100%;">
-        <q-img :src="whatIsHover ? 'src/assets/des-1.png' : 'src/assets/des.png'" class="picture"
-          @mouseover="whatIsHover = true" @mouseleave="whatIsHover = false" />
+        <!-- <q-img :src="whatIsHover ? '~assets/images/des-1.png' : '~assets/images/des.png'" class="picture"
+          @mouseover="whatIsHover = true" @mouseleave="whatIsHover = false" /> -->
+        <q-img src="~assets/images/des.png" class="picture"/>
       </div>
     </div>
 
     <div class="partners" ref="partner">
       <Swiper :modules="swiper_modules" :slides-per-view="5" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000">
-        <SwiperSlide v-for="partner of partners" :key="partner.src">
-          <q-img :src="partner.src" class="picture " />
+        <SwiperSlide>
+          <q-img src="~assets/images/partners1.png" class="picture " />
+        </SwiperSlide>
+        <SwiperSlide>
+          <q-img src="~assets/images/partners2.png" class="picture " />
+        </SwiperSlide>
+        <SwiperSlide>
+          <q-img src="~assets/images/partners3.png" class="picture " />
+        </SwiperSlide>
+        <SwiperSlide>
+          <q-img src="~assets/images/partners4.png" class="picture " />
+        </SwiperSlide>
+        <SwiperSlide>
+          <q-img src="~assets/images/partners5.png" class="picture " />
+        </SwiperSlide>
+        <SwiperSlide>
+          <q-img src="~assets/images/partners6.png" class="picture " />
         </SwiperSlide>
       </Swiper>
     </div>
@@ -55,7 +71,7 @@
         Что входит в стоимость?
       </div>
       <div class="cost flex flex-center column">
-        <q-img src="src/assets/cost.png" class="cost-background" />
+        <q-img src="~assets/images/cost.png" class="cost-background" />
         <div class="cost-text wrapper column">
           <div class=" accomodation row ">
             <div class="picture-wrapper">
@@ -156,15 +172,15 @@
       </div>
       <Swiper :modules="swiper_modules" :rewind="true" :autoplay="{ delay: 0 }" :speed="10000" class="swipe">
         <SwiperSlide>
-          <q-img src="src/assets/pictures/picture-1.png" />
+          <q-img src="~assets/images/picture-1.png" />
         </SwiperSlide>
         <SwiperSlide>
-          <q-img src="src/assets/pictures/picture-2.png" />
+          <q-img src="~assets/images/picture-2.png" />
         </SwiperSlide>
       </Swiper>
       <div class="subtitle text-accent wrapper">
         Больше фото с Посвята'21 можно найти
-          <a href="#">здесь</a>
+        <a href="#">здесь</a>
       </div>
     </div>
     <div class="footer">
@@ -177,7 +193,7 @@
           <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" @click="goTo()" />
         </div>
       </div>
-      <q-img src="src/assets/footer.png" class="lines" />
+      <q-img src="~assets/images/footer.png" class="lines" />
     </div>
 
   </q-page>
@@ -193,28 +209,28 @@ import { scroll } from 'quasar'
 const { getVerticalScrollPosition, setVerticalScrollPosition } = scroll
 const about = ref()
 const partner = ref()
-const costs = ref()
+const cost = ref()
 const picture = ref()
 const router = useRouter()
 const swiper_modules = [Autoplay]
 const partners = [
   {
-    src: 'src/assets/partners1.png',
+    src: '~assets/images/partners1.png',
   },
   {
-    src: 'src/assets/partners2.png',
+    src: '~assets/images/partners2.png',
   },
   {
-    src: 'src/assets/partners3.png',
+    src: '~assets/images/partners3.png',
   },
   {
-    src: 'src/assets/partners4.png',
+    src: '~assets/images/partners4.png',
   },
   {
-    src: 'src/assets/partners5.png',
+    src: '~assets/images/partners5.png',
   },
   {
-    src: 'src/assets/partners6.png',
+    src: '~assets/images/partners6.png',
   }
 ]
 const whatIsHover = ref(false)
@@ -223,18 +239,20 @@ onMounted(() => {
   // window.addEventListener('resize', updateWidth);
   console.log('mounted')
 })
-onUpdated(()=>{
+onUpdated(() => {
   console.log('updated')
 })
 function goTo() {
-  router.push({path: '/registration'})
+  router.push({ path: '/registration' })
+}
+function go() {
+  window.location.href = 'https://vk.com/miemposvyat'
 }
 
 
 
 </script>
 <style lang="scss" scoped>
-
 .wrapper {
   padding-left: 10%;
   padding-right: 10%;
@@ -545,31 +563,38 @@ function goTo() {
     margin-top: 27.78vw;
   }
 }
+
 .pictures {
   .title {
     padding-top: 2.9vw;
     padding-bottom: 2.9vw;
   }
+
   .subtitle {
     font-weight: 600;
     font-size: 1.85vw;
     line-height: 100%;
     padding-top: 0.58vw;
     padding-bottom: 2.32vw;
+
     a {
-      color:#EFB515
+      color: #EFB515
     }
   }
+
   background: #212121;
+
   .swipe {
-    height: 50.16vw;
+    // height: 50.16vw;
   }
 }
+
 .picture {
   &-wrapper {
     width: 50%;
   }
 }
+
 .footer {
   height: 41.67vw;
   position: relative;
@@ -617,5 +642,13 @@ function goTo() {
 
   //bottom: 0 //top: 5930px;
 
+}
+
+
+.screen--xs {
+  .wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 </style>

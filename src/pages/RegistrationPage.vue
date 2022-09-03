@@ -19,10 +19,10 @@
         label-color="dark" type="tel" :rules="[val => !!val || 'Обязательно поле']" :hide-bottom-space="true"
         mask="(###)###-##-##" />
 
-      <q-select filled v-model="uni" :options="university" label="Название ВУЗа" class="q-mb-lg"
-        bg-color="white" label-color="dark" :rules="[val => !!val || 'Обязательно поле']" :hide-bottom-space="true" />
+      <q-select filled v-model="uni" :options="university" label="Название ВУЗа" class="q-mb-lg" bg-color="white"
+        label-color="dark" :rules="[val => !!val || 'Обязательно поле']" :hide-bottom-space="true" />
       <q-input filled v-model="person.university" label="ВУЗ" class="q-mb-lg" bg-color="white" label-color="dark"
-        :rules="[val => !!val || 'Обязательно поле']" :hide-bottom-space="true" v-if="uni === 'Другое'"/>
+        :rules="[val => !!val || 'Обязательно поле']" :hide-bottom-space="true" v-if="uni === 'Другое'" />
       <q-input filled v-model="person.program" label="Название ОП" class="q-mb-lg" bg-color="white" label-color="dark"
         :rules="[val => !!val || 'Обязательно поле']" :hide-bottom-space="true" />
 
@@ -34,16 +34,18 @@
         <div class="t">
           Пол
         </div>
-        <q-radio name="shape" v-model="person.sex" val="Женский" label="Женский" class="radio" color="white" keep-color/>
-        <q-radio name="shape" v-model="person.sex" val="Мужской" label="Мужской" class="radio" color="white" keep-color/>
+        <q-radio name="shape" v-model="person.sex" val="Женский" label="Женский" class="radio" color="white"
+          keep-color />
+        <q-radio name="shape" v-model="person.sex" val="Мужской" label="Мужской" class="radio" color="white"
+          keep-color />
       </div>
 
-      <q-input filled v-model="person.date" mask="date" label="Дата рождения" class="q-mb-lg" bg-color="white"
-        label-color="dark" :hide-bottom-space="true">
+      <q-input filled v-model="person.date" label="Дата рождения" class="q-mb-lg" bg-color="white" label-color="dark"
+        :hide-bottom-space="true">
         <template v-slot:append>
           <q-icon name="event" class="cursor-pointer">
             <q-popup-proxy cover transition-show="scale" transition-hide="scale">
-              <q-date v-model="person.date">
+              <q-date v-model="person.date" mask="DD.MM.YYYY">
                 <div class="row items-center justify-end">
                   <q-btn v-close-popup label="Close" color="primary" flat />
                 </div>
@@ -54,12 +56,12 @@
       </q-input>
       <q-select filled v-model="person.transfer" :options="tr" label="Нужен ли трансфер?" class="q-mb-lg"
         bg-color="white" label-color="dark" :rules="[val => !!val || 'Обязательно поле']" :hide-bottom-space="true" />
-      <q-input filled v-model="person.alergic" label="Аллергия, особенности организма" class="q-mb-lg" bg-color="white"
+      <q-input filled v-model="person.alergic" label="Аллергии, особенности организма" class="q-mb-lg" bg-color="white"
         label-color="dark" type="textarea" :hide-bottom-space="true" :rules="[val => !!val || 'Обязательно поле']" />
       <div class="gender flex row items-center">
         <q-checkbox keep-color v-model="person.submit" color="white" />
         <div class="t">
-          Даю согласие на обработку персональныйх данных
+          Даю согласие на обработку персональных данных
         </div>
         <!-- <q-radio name="shape" v-model="person.submit" val="true" class="radio" color="white" /> -->
       </div>
@@ -69,7 +71,7 @@
 
       </div>
     </q-form>
-    <q-img src="src/assets/footer.png" class="lines" />
+    <q-img src="~assets/images/footer.png" class="lines" />
   </q-page>
 </template>
 
@@ -77,23 +79,25 @@
 import { ref } from 'vue'
 import { register } from 'src/api/registration'
 import { useQuasar } from 'quasar'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const q = useQuasar()
 const person = ref({})
 const tr = [
-  'Да, из Одинцово',
-  'Да, с Площади Победы',
-  'Нет'
+  'Нет, поеду сам',
+  'Да, поехал бы с Одинцово',
+  'Да, поехал бы с Парка Победы'
 ]
 const uni = ref('')
 const year = [
-  '1 курс бак/спец',
-  '2 курс бак/спец',
-  '3 курс бак/спец',
-  '4 курс бак/спец',
-  '5 курс спец',
-  '6 курс спец',
-  'Магистрант',
-  'Аспирант',
+  '1 курс Бакалавриат/Специалитет',
+  '2 курс Бакалавриат/Специалитет',
+  '3 курс Бакалавриат/Специалитет',
+  '4 курс Бакалавриат/Специалитет',
+  '5 курс Бакалавриат/Специалитет',
+  '6 курс Специалитет',
+  'Магистратура',
+  'Аспирантура',
   'Выпускник'
 ]
 const university = [
@@ -135,8 +139,8 @@ const t = {
   "submit": true
 }
 async function onSubmit() {
-  person.value.link_vk = 'https://vk.com/' + person.value.link_vk
-  person.value.link_tg = 'https://t.me/' + person.value.link_tg
+  person.value.link_vk = 'vk.com/' + person.value.link_vk
+  person.value.link_tg = 't.me/' + person.value.link_tg
   person.value.number = '+7' + person.value.number
   if (uni.value != 'Другое') person.value.university = uni.value
   console.log(person.value)
@@ -144,22 +148,22 @@ async function onSubmit() {
   // person.value.submit = true
 
 
-  // let result = await register(person.value)
-  // if (!result) {
-  //   q.notify({
-  //     icon: "warning",
-  //     type: "negative",
-  //     multiLine: true,
-  //     message: "Возникла ошибка!",
-  //
-  //   });
-  // } else {
-  //   q.notify({
-  //     type: "positive",
-  //     message: "Вы зарегистрированы!",
-  //   });
-  //   person.value = {}
-  // }
+  let result = await register(person.value)
+  if (!result) {
+    q.notify({
+      icon: "warning",
+      type: "negative",
+      multiLine: true,
+      message: "Возникла ошибка!",
+    });
+  } else {
+    q.notify({
+      type: "positive",
+      message: "Вы зарегистрированы!",
+    });
+    router.push({ path: '/' })
+
+  }
 }
 </script>
 <style scoped lang="scss">

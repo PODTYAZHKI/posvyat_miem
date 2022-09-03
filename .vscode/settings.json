@@ -8,5 +8,8 @@
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
   "[scss]": {
     "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   }
 }
