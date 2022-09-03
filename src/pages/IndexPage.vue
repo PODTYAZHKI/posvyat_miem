@@ -13,7 +13,7 @@
           </div>
           <div class="buttons flex justify-center">
             <q-btn no-caps label="Регистрация" class="btn btn-reg" @click="goTo" />
-            <q-btn no-caps label="Узнать больше" class="btn btn-more" @click="go" />
+            <q-btn no-caps label="Узнать больше" class="btn btn-more" @click="go('https://vk.com/miemposvyat')" />
           </div>
         </div>
       </div>
@@ -35,7 +35,7 @@
           боте.
           Пропустить событие, которое бывает раз в жизни, — преступление. Скорее садись на поезд в студенчество!
         </div>
-        <q-btn no-caps label="Поехали!" class="btn btn-go q-mt-lg q-mr-md" />
+        <q-btn no-caps label="Поехали!" class="btn btn-go q-mt-lg q-mr-md" @click="go('https://t.me/miemposvyat')" />
       </div>
       <div class="whatIs-picture" style="width:50%; height: 100%;">
         <!-- <q-img :src="whatIsHover ? '~assets/images/des-1.png' : '~assets/images/des.png'" class="picture"
@@ -180,7 +180,7 @@
       </Swiper>
       <div class="subtitle text-accent wrapper">
         Больше фото с Посвята'21 можно найти
-        <a href="#">здесь</a>
+        <a @click="go('https://vk.com/albums-128408160')">здесь</a>
       </div>
     </div>
     <div class="footer">
@@ -213,26 +213,7 @@ const cost = ref()
 const picture = ref()
 const router = useRouter()
 const swiper_modules = [Autoplay]
-const partners = [
-  {
-    src: '~assets/images/partners1.png',
-  },
-  {
-    src: '~assets/images/partners2.png',
-  },
-  {
-    src: '~assets/images/partners3.png',
-  },
-  {
-    src: '~assets/images/partners4.png',
-  },
-  {
-    src: '~assets/images/partners5.png',
-  },
-  {
-    src: '~assets/images/partners6.png',
-  }
-]
+
 const whatIsHover = ref(false)
 const width = ref(0)
 onMounted(() => {
@@ -245,8 +226,9 @@ onUpdated(() => {
 function goTo() {
   router.push({ path: '/registration' })
 }
-function go() {
-  window.location.href = 'https://vk.com/miemposvyat'
+function go(link) {
+  // window.location.href = 'https://vk.com/miemposvyat'
+  window.location.href = link
 }
 
 
@@ -649,6 +631,82 @@ function go() {
   .wrapper {
     padding-left: 5%;
     padding-right: 5%;
+  }
+  .cost {
+    .card {
+    &-text {
+      width: 50%;
+      //float: right;
+    }
+
+    &-title {
+      font-weight: 900;
+      font-size: 4vw;
+      line-height: 100%;
+      margin-bottom: 1.38vw;
+      /* identical to box height, or 48px */
+
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: $secondary;
+    }
+
+    &-description {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 2.5vw;
+      line-height: 100%;
+      /* or 32px */
+
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: $accent;
+    }
+  }
+  .accomodation {
+    // margin-top: 160px;
+    margin-top: 2.11vw;
+  }
+
+  .transfer {
+    // margin-top: 420px;
+    margin-top: 25.17vw;
+  }
+
+  .food {
+    // margin-top: 300px;
+    margin-top: 8.83vw;
+  }
+
+  .welcome {
+    // margin-top: 300px;
+    margin-top: 15.83vw;
+  }
+
+  .program {
+    // margin-top: 350px;
+    margin-top: 13.31vw;
+  }
+
+  .show {
+    // margin-top: 450px;
+    margin-top: 30.25vw;
+  }
+
+  .night {
+    // margin-top: 400px;
+    margin-top: 18.78vw;
+  }
+  .photo {
+    .card-text {
+      width: 45%;
+    }
+
+    // margin-top: 400px;
+    margin-top: 15.78vw;
+  }
+
+  }
+  .btn {
+    width: 25.37vw;
   }
 }
 </style>

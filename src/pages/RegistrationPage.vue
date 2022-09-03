@@ -60,13 +60,13 @@
         label-color="dark" type="textarea" :hide-bottom-space="true" :rules="[val => !!val || 'Обязательно поле']" />
       <div class="gender flex row items-center">
         <q-checkbox keep-color v-model="person.submit" color="white" />
-        <div class="t">
+        <div class="t r">
           Даю согласие на обработку персональных данных
         </div>
         <!-- <q-radio name="shape" v-model="person.submit" val="true" class="radio" color="white" /> -->
       </div>
 
-      <div>
+      <div class="btn-wrapper">
         <q-btn label="Зарегистрироваться" type="submit" class="btn" />
 
       </div>
@@ -244,6 +244,37 @@ async function onSubmit() {
     font-weight: 400;
     line-height: 100%;
     font-size: 1.85vw;
+  }
+}
+
+.screen--xs {
+  .wrapper {
+    padding-right: 10.13vw;
+    padding-left: 10.13vw;
+  }
+
+  .title {
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    font-size: 8vw;
+  }
+  .gender {
+    height: 25vw;
+    .t {
+      font-size: 4.5vw;
+    }
+    .r {
+      font-size: 2.75vw;
+    }
+  }
+  .btn {
+    font-size: 5vw;
+    width: 75.37vw;
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
+    }
   }
 }
 </style>
