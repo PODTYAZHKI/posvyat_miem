@@ -1,6 +1,6 @@
 import { api } from "boot/axios";
 export async function register(person) {
-  const url = `http://localhost:8000/registration`;
+  const url = `http://localhost/registration`;
 
   return await api
     .post(url, person)

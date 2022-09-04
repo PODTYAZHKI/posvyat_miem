@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 
-export const useCounterStore = defineStore('counter', {
+export const useScroll = defineStore('scroll', {
   state: () => ({
     counter: 0,
   }),

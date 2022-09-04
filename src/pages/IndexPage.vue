@@ -22,7 +22,7 @@
 
 
 
-    <div class="whatIs wrapper flex row items-center q-pb-xl" ref="about">
+    <div class="whatIs wrapper flex row items-center q-pb-xl" id="about">
       <div style="width:50%" class="whatIs-text">
         <div class="title q-pt-xl q-pb-md">
           что такое посвят?
@@ -44,8 +44,8 @@
       </div>
     </div>
 
-    <div class="partners" ref="partner">
-      <Swiper :modules="swiper_modules" :slides-per-view="5" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000">
+    <div class="partners" id="partner">
+      <Swiper :modules="swiper_modules" :slides-per-view="5" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000" ref="swiper2">
         <SwiperSlide>
           <q-img src="~assets/images/partners1.png" class="picture " />
         </SwiperSlide>
@@ -66,7 +66,7 @@
         </SwiperSlide>
       </Swiper>
     </div>
-    <div class="cost-wrapper" ref="cost">
+    <div class="cost-wrapper" id="cost">
       <div class="title flex flex-center wrapper q-pt-xl">
         Что входит в стоимость?
       </div>
@@ -166,11 +166,11 @@
         </div>
       </div>
     </div>
-    <div class="pictures" ref="picture">
+    <div class="pictures" id="picture">
       <div class="title  wrapper">
         В подарок идут...
       </div>
-      <Swiper :modules="swiper_modules" :rewind="true" :autoplay="{ delay: 0 }" :speed="10000" class="swipe">
+      <Swiper :modules="swiper_modules" :rewind="true" :autoplay="{ delay: 0 }" :speed="10000" class="swipe" ref="swiper2">
         <SwiperSlide>
           <q-img src="~assets/images/picture-1.png" />
         </SwiperSlide>
@@ -203,25 +203,20 @@
 import 'swiper/scss';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay } from 'swiper';
-import { ref, onMounted, onUpdated } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { scroll } from 'quasar'
-const { getVerticalScrollPosition, setVerticalScrollPosition } = scroll
-const about = ref()
-const partner = ref()
-const cost = ref()
-const picture = ref()
+
 const router = useRouter()
 const swiper_modules = [Autoplay]
+const swiper1 = ref()
+const swiper2 = ref()
 
-const whatIsHover = ref(false)
-const width = ref(0)
 onMounted(() => {
   // window.addEventListener('resize', updateWidth);
-  console.log('mounted')
-})
-onUpdated(() => {
-  console.log('updated')
+  // console.log(swiper1.value)
+
+  // Swiper.autoplay.stop()
+  // Swiper.autoplay.start()
 })
 function goTo() {
   router.push({ path: '/registration' })
