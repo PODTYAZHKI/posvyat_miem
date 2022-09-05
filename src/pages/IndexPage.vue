@@ -219,7 +219,8 @@ function goTo() {
 }
 function go(link) {
   // window.location.href = 'https://vk.com/miemposvyat'
-  window.location.href = link
+  // window.location.href = link
+  window.open(link, '_blank');
 }
 
 

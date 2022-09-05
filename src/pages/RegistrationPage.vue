@@ -41,7 +41,7 @@
       </div>
 
       <q-input filled v-model="person.date" label="Дата рождения" class="q-mb-lg" bg-color="white" label-color="dark"
-        :hide-bottom-space="true">
+        :hide-bottom-space="true" mask="##.##.####">
         <template v-slot:append>
           <q-icon name="event" class="cursor-pointer">
             <q-popup-proxy cover transition-show="scale" transition-hide="scale">
@@ -67,7 +67,7 @@
       </div>
 
       <div class="btn-wrapper">
-        <q-btn label="Зарегистрироваться" type="submit" class="btn" />
+        <q-btn label="Зарегистрироваться" type="submit" class="btn" :disable="!person.submit"/>
 
       </div>
     </q-form>
@@ -139,31 +139,51 @@ const t = {
   "submit": true
 }
 async function onSubmit() {
-  person.value.link_vk = 'vk.com/' + person.value.link_vk
-  person.value.link_tg = 't.me/' + person.value.link_tg
-  person.value.number = '+7' + person.value.number
-  if (uni.value != 'Другое') person.value.university = uni.value
-  console.log(person.value)
+  // person.value.link_vk = 'vk.com/' + person.value.link_vk
+  // person.value.link_tg = 't.me/' + person.value.link_tg
+  // person.value.number = '+7' + person.value.number
+  // if (uni.value != 'Другое') person.value.university = uni.value
+
+
+  let data = {
+    surname: person.value.surname,
+    name: person.value.name,
+    patronymic: person.value.patronymic,
+    link_vk: 'vk.com/' + person.value.link_vk,
+    link_tg: 't.me/' + person.value.link_tg,
+    number: '+7' + person.value.number,
+    university: uni.value != 'Другое' ? uni.value : person.value.university,
+    program: person.value.program,
+    course: person.value.course,
+    group: person.value.group,
+    sex: person.value.sex,
+    date: person.value.date,
+    transfer: person.value.transfer ,
+    alergic: person.value.alergic,
+    submit: person.value.submit
+  }
+
+  console.log(data)
 
   // person.value.submit = true
 
 
-  let result = await register(person.value)
-  if (!result) {
-    q.notify({
-      icon: "warning",
-      type: "negative",
-      multiLine: true,
-      message: "Возникла ошибка!",
-    });
-  } else {
-    q.notify({
-      type: "positive",
-      message: "Вы зарегистрированы!",
-    });
-    router.push({ path: '/' })
+  // let result = await register(data)
+  // if (!result) {
+  //   q.notify({
+  //     icon: "warning",
+  //     type: "negative",
+  //     multiLine: true,
+  //     message: "Возникла ошибка!",
+  //   });
+  // } else {
+  //   q.notify({
+  //     type: "positive",
+  //     message: "Вы зарегистрированы!",
+  //   });
+  //   router.push({ path: '/' })
 
-  }
+  // }
 }
 </script>
 <style scoped lang="scss">
@@ -258,18 +278,23 @@ async function onSubmit() {
     padding-bottom: 10vw;
     font-size: 8vw;
   }
+
   .gender {
     height: 25vw;
+
     .t {
       font-size: 4.5vw;
     }
+
     .r {
       font-size: 2.75vw;
     }
   }
+
   .btn {
     font-size: 5vw;
     width: 75.37vw;
+
     &-wrapper {
       display: flex;
       justify-content: center;

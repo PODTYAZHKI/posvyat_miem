@@ -75,7 +75,8 @@ const menu_links = [
   }
 ]
 function go(link) {
-  window.location.href = link
+  // window.location.href = link
+  window.open(link, '_blank');
 }
 function goTo(link) {
   let l = `#${link}`
