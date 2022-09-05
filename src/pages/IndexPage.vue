@@ -230,6 +230,9 @@ function go(link) {
   padding-left: 10%;
   padding-right: 10%;
 }
+.page {
+  background: #212121;
+}
 
 
 
