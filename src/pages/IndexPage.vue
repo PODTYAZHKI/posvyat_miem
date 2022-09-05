@@ -1,13 +1,13 @@
 <template>
   <q-page class="full-height page" color="primary">
     <div class="intro-wrapper" ref="intro">
-      <q-img src="~assets/images/background-1.png" class="background" />
+      <q-img src="~assets/images/background-1.png" class="no-copy background" />
       <div class="intro text-accent wrapper flex justify-center items-center" ref="intro">
         <div class="intro-text ">
           <div class="suptitle text-center">
             1-2 Октября
           </div>
-          <q-img src="~assets/images/title.png" class="title " />
+          <q-img src="~assets/images/title.png" class="no-copy title " />
           <div class="subtitle flex flex-center column">
             Скорее регистрируйся и проведи <br> лучшую ночь этой осени вместе с нами!
           </div>
@@ -39,29 +39,29 @@
       <div class="whatIs-picture" style="width:50%; height: 100%;">
         <!-- <q-img :src="whatIsHover ? '~assets/images/des-1.png' : '~assets/images/des.png'" class="picture"
           @mouseover="whatIsHover = true" @mouseleave="whatIsHover = false" /> -->
-        <q-img src="~assets/images/des.png" class="picture"/>
+        <q-img src="~assets/images/des.png" class="no-copy picture"/>
       </div>
     </div>
 
     <div class="partners" id="partner">
       <Swiper :modules="swiper_modules" :slides-per-view="5" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000" ref="swiper2">
         <SwiperSlide>
-          <q-img src="~assets/images/partners1.png" class="picture " />
+          <q-img src="~assets/images/partners1.png" class="no-copy picture " />
         </SwiperSlide>
         <SwiperSlide>
-          <q-img src="~assets/images/partners2.png" class="picture " />
+          <q-img src="~assets/images/partners2.png" class="no-copy picture " />
         </SwiperSlide>
         <SwiperSlide>
-          <q-img src="~assets/images/partners3.png" class="picture " />
+          <q-img src="~assets/images/partners3.png" class="no-copy picture " />
         </SwiperSlide>
         <SwiperSlide>
-          <q-img src="~assets/images/partners4.png" class="picture " />
+          <q-img src="~assets/images/partners4.png" class="no-copy picture " />
         </SwiperSlide>
         <SwiperSlide>
-          <q-img src="~assets/images/partners5.png" class="picture " />
+          <q-img src="~assets/images/partners5.png" class="no-copy picture " />
         </SwiperSlide>
         <SwiperSlide>
-          <q-img src="~assets/images/partners6.png" class="picture " />
+          <q-img src="~assets/images/partners6.png" class="no-copy picture " />
         </SwiperSlide>
       </Swiper>
     </div>
@@ -70,7 +70,7 @@
         Что входит в стоимость?
       </div>
       <div class="cost flex flex-center column">
-        <q-img src="~assets/images/cost.png" class="cost-background" />
+        <q-img src="~assets/images/cost.png" class="no-copy cost-background" />
         <div class="cost-text wrapper column">
           <div class=" accomodation row ">
             <div class="picture-wrapper">
@@ -168,10 +168,10 @@
       </div>
       <Swiper :modules="swiper_modules" :rewind="true" :autoplay="{ delay: 0 }" :speed="10000" class="swipe" ref="swiper2">
         <SwiperSlide>
-          <q-img src="~assets/images/picture-1.png" />
+          <q-img src="~assets/images/picture-1.png" class="no-copy"/>
         </SwiperSlide>
         <SwiperSlide>
-          <q-img src="~assets/images/picture-2.png" />
+          <q-img src="~assets/images/picture-2.png" class="no-copy"/>
         </SwiperSlide>
       </Swiper>
       <div class="subtitle text-accent wrapper">
@@ -189,7 +189,7 @@
           <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" @click="goTo()" />
         </div>
       </div>
-      <q-img src="~assets/images/footer.png" class="lines" />
+      <q-img src="~assets/images/footer.png" class="no-copy lines" />
     </div>
 
   </q-page>
@@ -226,6 +226,10 @@ function go(link) {
 
 </script>
 <style lang="scss" scoped>
+
+.no-copy {
+  pointer-events: none;
+}
 .wrapper {
   padding-left: 10%;
   padding-right: 10%;
