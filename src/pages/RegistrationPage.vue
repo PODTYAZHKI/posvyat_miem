@@ -17,7 +17,7 @@
         bg-color="white" label-color="dark" :rules="[val => !!val || 'Обязательно поле']" :hide-bottom-space="true" />
       <q-input prefix="+7" filled v-model="person.number" label="Номер телефона" class="q-mb-lg" bg-color="white"
         label-color="dark" type="tel" :rules="[val => !!val || 'Обязательно поле']" :hide-bottom-space="true"
-        mask="(###)###-##-##" />
+        mask="(###) ###-##-##" />
 
       <q-select filled v-model="uni" :options="university" label="Название ВУЗа" class="q-mb-lg" bg-color="white"
         label-color="dark" :rules="[val => !!val || 'Обязательно поле']" :hide-bottom-space="true" />
@@ -67,7 +67,7 @@
       </div>
 
       <div class="btn-wrapper">
-        <q-btn label="Зарегистрироваться" type="submit" class="btn" :disable="!person.submit"/>
+        <q-btn label="Зарегистрироваться" type="submit" class="btn" :disable="!person.submit" />
 
       </div>
     </q-form>
@@ -158,7 +158,7 @@ async function onSubmit() {
     group: person.value.group,
     sex: person.value.sex,
     date: person.value.date,
-    transfer: person.value.transfer ,
+    transfer: person.value.transfer,
     alergic: person.value.alergic,
     submit: person.value.submit
   }
@@ -187,6 +187,10 @@ async function onSubmit() {
 }
 </script>
 <style scoped lang="scss">
+.q-field :deep(.q-field__prefix) {
+  padding-right: 0;
+}
+
 .page {
   background: #212121;
 }

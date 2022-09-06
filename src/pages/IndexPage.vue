@@ -28,14 +28,15 @@
           что такое посвят?
         </div>
         <div class="description">
-          Посвят — это, первое яркое событие в жизни каждого студента!
+          Посвят — это первое яркое событие в жизни каждого студента!
           Тебя ждут и диалоги тет-а-тет с одногруппниками, и нон-стоп танцы до утра, и даже highway to hell,
           если ты сильно захочешь победить в конкурсах.<br><br>
           В Telegram-канале Посвята ты увидишь закулисье подготовки, а всю важную информацию найдешь в группе ВКонтакте
           и боте.
           Пропустить событие, которое бывает раз в жизни, — преступление. Скорее садись на поезд в студенчество!
         </div>
-        <q-btn no-caps label="Поехали!" class="btn btn-go q-mt-lg q-mr-md" @click="go('https://t.me/miemposvyat')" />
+        <q-btn no-caps label="Поехали!" class="btn btn-go q-mt-lg q-mr-md"
+          @click="go('https://vk.com/im?media=&sel=-128408160')" />
       </div>
       <div class="whatIs-picture" style="width:50%; height: 100%;">
         <!-- <q-img :src="whatIsHover ? '~assets/images/des-1.png' : '~assets/images/des.png'" class="picture"
@@ -45,9 +46,24 @@
     </div>
 
     <div class="partners" id="partner">
-      <Swiper :modules="swiper_modules" :slides-per-view="5" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000"
+      <Swiper :modules="swiper_modules" :slides-per-view="4" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000"
         ref="swiper2">
         <SwiperSlide>
+          <img src="~assets/images/partners1.png" alt="" class="picture"/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="~assets/images/partners2.png" alt="" class="picture"/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="~assets/images/partners3.png" alt="" class="picture"/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="~assets/images/partners4.png" alt="" class="picture part"/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="~assets/images/partners5.png" alt="" class="picture"/>
+        </SwiperSlide>
+        <!-- <SwiperSlide class="partners-slide">
           <q-img src="~assets/images/partners1.png" class="no-copy picture " />
         </SwiperSlide>
         <SwiperSlide>
@@ -61,10 +77,7 @@
         </SwiperSlide>
         <SwiperSlide>
           <q-img src="~assets/images/partners5.png" class="no-copy picture " />
-        </SwiperSlide>
-        <SwiperSlide>
-          <q-img src="~assets/images/partners6.png" class="no-copy picture " />
-        </SwiperSlide>
+        </SwiperSlide> -->
       </Swiper>
     </div>
     <div class="cost-wrapper" id="cost">
@@ -133,7 +146,8 @@
           <div class="show row">
             <div class="card-text">
               <div class="card-title">Шоу</div>
-              <div class="card-description">Тебя ждут и концертная программа, и даже ритуал посвящения в студенты. Прочувствуй дух времени!
+              <div class="card-description">Тебя ждут и концертная программа, и даже ритуал посвящения в студенты.
+                Прочувствуй дух времени!
               </div>
             </div>
             <div class="picture-wrapper">
@@ -155,7 +169,7 @@
             <div class="card-text">
               <div class="card-title">Фотозоны</div>
               <div class="card-description">Благодаря нашим фотографам получится освежить в памяти моменты вечера. А
-                селфизоны созданы для того, чтобы ты точно подобрал нужный ракурс!
+                селфи-зоны созданы для того, чтобы ты точно подобрал нужный ракурс!
 
               </div>
             </div>
@@ -404,22 +418,27 @@ function go(link) {
 }
 
 .partners {
-  //padding-top: 25px;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
   background: #F1E0C6;
-  height: 12.15vw;
 
   .swiper {
-    height: 100%;
+    height: 15vw;
 
     &-slide {
+      // background: red;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
-
       .picture {
-        //object-fit: fill;
-        width: 16.27vw;
+        // background: red;
+        height: 100%;
+        // width: auto;
+        // width: 100%;
+      }
+      .part {
+        width: 13.88vw;
+        height: auto;
       }
     }
 
@@ -596,7 +615,7 @@ function go(link) {
   &-title {
     font-weight: 900;
     font-size: 2.08vw;
-    line-height: 105%;
+    line-height: 110%;
     display: flex;
     align-items: flex-end;
     /* or 38px */
