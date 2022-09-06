@@ -7,9 +7,20 @@ services:
       target: 'production-stage'
     ports:
     - '80:80'
+    - 443:443
     volumes:
     - '.:/app'
+
     # command: /bin/sh -c "yarn && quasar build"
+  # nginx:
+  #   image: nginx:1.13
+  #   container_name: nginx
+  #   restart: always
+  #   ports:
+  #       - "80:80"
+  #       - "443:443"
+  #   volumes:
+  #       - ./nginx/conf.d:/etc/nginx/conf.d
 
 # version: "3.7"
 

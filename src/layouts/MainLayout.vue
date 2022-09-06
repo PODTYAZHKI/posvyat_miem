@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHr lpR fFf">
     <q-header elevated>
-      <q-toolbar style="padding-left: 10%; padding-right: 10%; height: 8.45vw;">
+      <q-toolbar style="padding-left: 10%; padding-right: 10%; height: 8.55vw;">
         <a href="#">
           <q-avatar size="5.21vw" class="q-my-md">
             <img src="~assets/logo.svg">

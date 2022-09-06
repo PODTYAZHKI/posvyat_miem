@@ -131,8 +131,8 @@
           </div>
           <div class="show row">
             <div class="card-text">
-              <div class="card-title">Яркое шоу</div>
-              <div class="card-description">Тебя ждут и выступление музыкальной группы, и тематический танец, и даже ритуал посвящения в студенты!
+              <div class="card-title">Шоу</div>
+              <div class="card-description">Тебя ждут и концертная программа, и даже ритуал посвящения в студенты!
               </div>
             </div>
             <div class="picture-wrapper">
@@ -631,7 +631,11 @@ function go(link) {
 
 }
 
-
+.screen--sm {
+  .btn {
+    width: 25.37vw;
+  }
+}
 .screen--xs {
   .wrapper {
     padding-left: 5%;

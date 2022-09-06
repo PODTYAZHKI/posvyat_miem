@@ -5,12 +5,19 @@ COPY package*.json ./
 RUN yarn global add @quasar/cli
 RUN yarn
 COPY ./ .
+
 # build stage
 FROM develop-stage as build-stage
 RUN quasar build
+# COPY /app/dist/spa /usr/share/nginx/html
 # production stage
 FROM nginx:1.17.5-alpine as production-stage
 COPY --from=build-stage /app/dist/spa /usr/share/nginx/html
+# COPY --from=build-stage /app/init-letsencrypt.sh /usr/share/nginx/html
+
+# RUN /usr/share/nginx/html/init-letsencrypt.sh
+# ENTRYPOINT ["bash","/usr/share/nginx/html/init-letsencrypt.sh"]
+
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
