@@ -168,22 +168,22 @@ async function onSubmit() {
   // person.value.submit = true
 
 
-  // let result = await register(data)
-  // if (!result) {
-  //   q.notify({
-  //     icon: "warning",
-  //     type: "negative",
-  //     multiLine: true,
-  //     message: "Возникла ошибка!",
-  //   });
-  // } else {
-  //   q.notify({
-  //     type: "positive",
-  //     message: "Вы зарегистрированы!",
-  //   });
-  //   router.push({ path: '/' })
+  let result = await register(data)
+  if (!result) {
+    q.notify({
+      icon: "warning",
+      type: "negative",
+      multiLine: true,
+      message: "Возникла ошибка!",
+    });
+  } else {
+    q.notify({
+      type: "positive",
+      message: "Вы зарегистрированы!",
+    });
+    router.push({ path: '/' })
 
-  // }
+  }
 }
 </script>
 <style scoped lang="scss">
