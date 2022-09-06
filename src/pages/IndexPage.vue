@@ -117,7 +117,7 @@
             <div class="card-text">
               <div class="card-title">Ужин и завтрак в формате шведского стола</div>
               <div class="card-description">Собираешься много общаться, петь и танцевать? Хочешь, чтобы сил хватило до
-                утра? Тогда шведский стол со вкусной едой – то, что нужно!
+                утра? Тогда шведский стол со вкусной едой — то, что нужно!
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@
       <div class="end wrapper row">
         <div class="flex align-center" style="width:70%">
           <div class="footer-title">Пока ты читал это сообщение, на Посвят зарегистрировались два человека</div>
-          <div class="footer-text">Не отставай – бронируй место прямо сейчас!</div>
+          <div class="footer-text">Не отставай — заполняй форму прямо сейчас!</div>
         </div>
         <div class="column justify-center items-end" style="width:30%">
           <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" @click="goTo()" />

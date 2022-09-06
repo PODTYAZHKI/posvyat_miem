@@ -65,7 +65,7 @@ const menu_links = [
   },
   {
     name: 'Cost',
-    field: 'Прогармма',
+    field: 'Прогамма',
     id: 'cost'
   },
   {
