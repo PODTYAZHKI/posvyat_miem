@@ -705,7 +705,7 @@ function go(link) {
 
     .program {
       // margin-top: 350px;
-      margin-top: 17.31vw;
+      margin-top: 18.31vw;
     }
 
     .show {
