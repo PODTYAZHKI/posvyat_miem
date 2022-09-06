@@ -264,7 +264,7 @@ function go(link) {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 52.75vw;
+  height: 45.75vw;
 
   &-text {
     width: 100%;
