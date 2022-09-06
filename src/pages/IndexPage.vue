@@ -176,7 +176,7 @@
       </Swiper>
       <div class="subtitle text-accent wrapper">
         Больше фото с Посвята'21 можно найти
-        <a @click="go('https://vk.com/albums-128408160')">здесь</a>
+        <a @click="go('https://vk.com/albums-128408160')" class="pictures-link">здесь</a>
       </div>
     </div>
     <div class="footer">
@@ -573,6 +573,12 @@ function go(link) {
 .picture {
   &-wrapper {
     width: 50%;
+  }
+}
+.pictures {
+  &-link {
+    text-decoration: underline;
+    cursor: pointer;
   }
 }
 
