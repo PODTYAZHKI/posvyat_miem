@@ -631,6 +631,9 @@ function go(link) {
     padding-left: 5%;
     padding-right: 5%;
   }
+  .description {
+    font-size: 2.5vw;
+  }
   .cost {
     .card {
     &-text {

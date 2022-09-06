@@ -6,6 +6,9 @@ import {
   createWebHashHistory,
 } from "vue-router";
 import routes from "./routes";
+// import { useQuasar } from 'quasar'
+// const $q = useQuasar()
+import { Screen } from 'quasar'
 
 
 /*
@@ -31,12 +34,19 @@ export default route(function (/* { store, ssrContext } */) {
       if (to.fullPath === "/registration") {
         return { left: 0, top: 0 };
       } else if (to.hash) {
+        let vw = window.innerWidth;
+        if (Screen.lt.sm) {
+          vw = vw*0.15
+        } else {
+          vw = vw*0.0845
+        }
+        console.log(vw)
         return {
           // x, y are replaced with left/top to define position, but when used with an element selector (el) will be used as offset
           el: to.hash,
           // offset has to be set as left and top at the top level
           left: 0,
-          top: 64,
+          top: vw,
           behavior: 'smooth',
         }
       }
