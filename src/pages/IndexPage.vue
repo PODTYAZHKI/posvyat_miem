@@ -2,6 +2,7 @@
   <q-page class="full-height page" color="primary">
     <div class="intro-wrapper" ref="intro">
       <q-img src="~assets/images/background-1.png" class="no-copy background" />
+      <!-- <q-img src="https://disk.yandex.ru/i/7AEU14o9EL8t2A" class="no-copy background" /> -->
       <div class="intro text-accent wrapper flex justify-center items-center" ref="intro">
         <div class="intro-text ">
           <div class="suptitle text-center">
@@ -62,6 +63,9 @@
         </SwiperSlide>
         <SwiperSlide>
           <img src="~assets/images/partners5.png" alt="" class="picture"/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="~assets/images/partners6.png" alt="" class="picture part"/>
         </SwiperSlide>
         <!-- <SwiperSlide class="partners-slide">
           <q-img src="~assets/images/partners1.png" class="no-copy picture " />
@@ -159,7 +163,7 @@
             </div>
             <div class="card-text">
               <div class="card-title">Ночная программа</div>
-              <div class="card-description">Дискотека, гитарники, неповторимые задания и ночные точки для тех, кто любит
+              <div class="card-description">Дискотека, гитарники и ночные точки для тех, кто любит
                 давать волю эмоциям, — выбирай, что душе угодно.
 
               </div>
@@ -186,6 +190,7 @@
       <Swiper :modules="swiper_modules" :rewind="true" :autoplay="{ delay: 0 }" :speed="10000" class="swipe"
         ref="swiper2">
         <SwiperSlide>
+          <!-- <q-img src="~assets/images/picture-1.png" class="no-copy" /> -->
           <q-img src="~assets/images/picture-1.png" class="no-copy" />
         </SwiperSlide>
         <SwiperSlide>

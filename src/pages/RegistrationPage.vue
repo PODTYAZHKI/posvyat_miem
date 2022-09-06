@@ -45,7 +45,7 @@
         <template v-slot:append>
           <q-icon name="event" class="cursor-pointer">
             <q-popup-proxy cover transition-show="scale" transition-hide="scale">
-              <q-date v-model="person.date" mask="DD.MM.YYYY">
+              <q-date v-model="person.date" mask="DD.MM.YYYY" first-day-of-week="1">
                 <div class="row items-center justify-end">
                   <q-btn v-close-popup label="Close" color="primary" flat />
                 </div>
@@ -59,7 +59,7 @@
       <q-input filled v-model="person.alergic" label="Аллергии, особенности организма" class="q-mb-lg" bg-color="white"
         label-color="dark" type="textarea" :hide-bottom-space="true" :rules="[val => !!val || 'Обязательно поле']" />
       <div class="gender flex row items-center">
-        <q-checkbox keep-color v-model="person.submit" color="white" />
+        <q-checkbox keep-color v-model="person.submit"  />
         <div class="t r">
           Даю согласие на обработку персональных данных
         </div>
@@ -143,7 +143,7 @@ async function onSubmit() {
   // person.value.link_tg = 't.me/' + person.value.link_tg
   // person.value.number = '+7' + person.value.number
   // if (uni.value != 'Другое') person.value.university = uni.value
-
+  let phone = person.value.number.split(' ')
 
   let data = {
     surname: person.value.surname,
@@ -151,7 +151,7 @@ async function onSubmit() {
     patronymic: person.value.patronymic,
     link_vk: 'vk.com/' + person.value.link_vk,
     link_tg: 't.me/' + person.value.link_tg,
-    number: '+7' + person.value.number,
+    number: '+7' + phone[0] + phone[1],
     university: uni.value != 'Другое' ? uni.value : person.value.university,
     program: person.value.program,
     course: person.value.course,
@@ -231,7 +231,9 @@ async function onSubmit() {
 //   font-size: 1.85vw;
 //   margin-bottom: 2.49vw;
 // }
-
+.q-checkbox :deep(.q-checkbox__bg) {
+  border: 2px solid #fff;
+}
 .btn {
   background: #EE4D07;
   color: #fff;
