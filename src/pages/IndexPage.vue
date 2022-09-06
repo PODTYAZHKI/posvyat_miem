@@ -28,10 +28,11 @@
           что такое посвят?
         </div>
         <div class="description">
-          Посвят — это, возможно, первое яркое событие в жизни каждого студента!
+          Посвят — это, первое яркое событие в жизни каждого студента!
           Тебя ждут и диалоги тет-а-тет с одногруппниками, и нон-стоп танцы до утра, и даже highway to hell,
           если ты сильно захочешь победить в конкурсах.<br><br>
-          В Telegram-канале Посвята ты увидишь закулисье подготовки, а всю важную информацию найдешь в группе ВКонтакте и боте.
+          В Telegram-канале Посвята ты увидишь закулисье подготовки, а всю важную информацию найдешь в группе ВКонтакте
+          и боте.
           Пропустить событие, которое бывает раз в жизни, — преступление. Скорее садись на поезд в студенчество!
         </div>
         <q-btn no-caps label="Поехали!" class="btn btn-go q-mt-lg q-mr-md" @click="go('https://t.me/miemposvyat')" />
@@ -39,12 +40,13 @@
       <div class="whatIs-picture" style="width:50%; height: 100%;">
         <!-- <q-img :src="whatIsHover ? '~assets/images/des-1.png' : '~assets/images/des.png'" class="picture"
           @mouseover="whatIsHover = true" @mouseleave="whatIsHover = false" /> -->
-        <q-img src="~assets/images/des.png" class="no-copy picture"/>
+        <q-img src="~assets/images/des.png" class="no-copy picture" />
       </div>
     </div>
 
     <div class="partners" id="partner">
-      <Swiper :modules="swiper_modules" :slides-per-view="5" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000" ref="swiper2">
+      <Swiper :modules="swiper_modules" :slides-per-view="5" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000"
+        ref="swiper2">
         <SwiperSlide>
           <q-img src="~assets/images/partners1.png" class="no-copy picture " />
         </SwiperSlide>
@@ -79,8 +81,7 @@
             <div class="card-text ">
               <div class="card-title">Проживание</div>
               <div class="card-description">Мы знаем, как важен здоровый сон для студентов, поэтому тебя ждёт уютная
-                комната и тёплое спальное место. Также в комнатах самые стойкие смогут продолжить вечер со своей
-                компанией.</div>
+                комната и спальное место.</div>
             </div>
           </div>
           <div class="transfer row">
@@ -89,7 +90,7 @@
               <div class="card-title">Трансфер туда и обратно</div>
               <div class="card-description">Тебе не придётся думать о том, как доехать до места проведения или
                 добраться
-                до метро после Посвята.
+                домой после Посвята.
               </div>
             </div>
             <div class="picture-wrapper">
@@ -103,14 +104,14 @@
             <div class="card-text">
               <div class="card-title">Ужин и завтрак в формате шведского стола</div>
               <div class="card-description">Собираешься много общаться, петь и танцевать? Хочешь, чтобы сил хватило до
-                утра? Тогда шведский стол со вкусной полезной едой – то, что нужно!
+                утра? Тогда шведский стол со вкусной едой – то, что нужно!
               </div>
             </div>
           </div>
           <div class="welcome row">
 
             <div class="card-text">
-              <div class="card-title">Велком-программа</div>
+              <div class="card-title">Welcome-программа</div>
               <div class="card-description">Первые знакомства, неповторимые задания и много-много сюрпризов помогут
                 тебе
                 собраться с мыслями и погрузиться в атмосферу американской ярмарки.</div>
@@ -126,13 +127,13 @@
             <div class="card-text">
               <div class="card-title">Основная программа</div>
               <div class="card-description">Командная игра? Сюжетная линия, погружающая в атмосферу с каждой секундой
-                всё больше? Изумительный поворот событий? На Посвяте возможно всё и сразу!</div>
+                всё больше? Необычный поворот событий? На Посвяте возможно всё и сразу!</div>
             </div>
           </div>
           <div class="show row">
             <div class="card-text">
               <div class="card-title">Шоу</div>
-              <div class="card-description">Тебя ждут и концертная программа, и даже ритуал посвящения в студенты!
+              <div class="card-description">Тебя ждут и концертная программа, и даже ритуал посвящения в студенты. Прочувствуй дух времени!
               </div>
             </div>
             <div class="picture-wrapper">
@@ -144,7 +145,8 @@
             </div>
             <div class="card-text">
               <div class="card-title">Ночная программа</div>
-              <div class="card-description">Дискотека, гитарники, неповторимые задания и ночные точки для тех, кто любит давать волю эмоциям, — выбирай, что душе угодно.
+              <div class="card-description">Дискотека, гитарники, неповторимые задания и ночные точки для тех, кто любит
+                давать волю эмоциям, — выбирай, что душе угодно.
 
               </div>
             </div>
@@ -152,7 +154,8 @@
           <div class="photo row">
             <div class="card-text">
               <div class="card-title">Фотозоны</div>
-              <div class="card-description">Благодаря нашим фотографам получится освежить в памяти моменты вечера. А селфизоны созданы для того, чтобы ты точно подобрал нужный ракурс!
+              <div class="card-description">Благодаря нашим фотографам получится освежить в памяти моменты вечера. А
+                селфизоны созданы для того, чтобы ты точно подобрал нужный ракурс!
 
               </div>
             </div>
@@ -166,16 +169,17 @@
       <div class="title  wrapper">
         В подарок идут...
       </div>
-      <Swiper :modules="swiper_modules" :rewind="true" :autoplay="{ delay: 0 }" :speed="10000" class="swipe" ref="swiper2">
+      <Swiper :modules="swiper_modules" :rewind="true" :autoplay="{ delay: 0 }" :speed="10000" class="swipe"
+        ref="swiper2">
         <SwiperSlide>
-          <q-img src="~assets/images/picture-1.png" class="no-copy"/>
+          <q-img src="~assets/images/picture-1.png" class="no-copy" />
         </SwiperSlide>
         <SwiperSlide>
-          <q-img src="~assets/images/picture-2.png" class="no-copy"/>
+          <q-img src="~assets/images/picture-2.png" class="no-copy" />
         </SwiperSlide>
       </Swiper>
       <div class="subtitle text-accent wrapper">
-        Больше фото с Посвята'21 можно найти
+        Больше фото с Посвятов можно найти
         <a @click="go('https://vk.com/albums-128408160')" class="pictures-link">здесь</a>
       </div>
     </div>
@@ -227,14 +231,15 @@ function go(link) {
 
 </script>
 <style lang="scss" scoped>
-
 .no-copy {
   pointer-events: none;
 }
+
 .wrapper {
   padding-left: 10%;
   padding-right: 10%;
 }
+
 .page {
   background: #212121;
 }
@@ -575,6 +580,7 @@ function go(link) {
     width: 50%;
   }
 }
+
 .pictures {
   &-link {
     text-decoration: underline;
@@ -636,87 +642,93 @@ function go(link) {
     width: 25.37vw;
   }
 }
+
 .screen--xs {
   .wrapper {
     padding-left: 5%;
     padding-right: 5%;
   }
+
   .description {
     font-size: 2.5vw;
   }
+
   .cost {
     .card {
-    &-text {
-      width: 50%;
-      //float: right;
+      &-text {
+        width: 50%;
+        //float: right;
+      }
+
+      &-title {
+        font-weight: 900;
+        font-size: 4vw;
+        line-height: 100%;
+        margin-bottom: 1.38vw;
+        /* identical to box height, or 48px */
+
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: $secondary;
+      }
+
+      &-description {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2.5vw;
+        line-height: 100%;
+        /* or 32px */
+
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: $accent;
+      }
     }
 
-    &-title {
-      font-weight: 900;
-      font-size: 4vw;
-      line-height: 100%;
-      margin-bottom: 1.38vw;
-      /* identical to box height, or 48px */
-
-      font-feature-settings: 'pnum' on, 'lnum' on;
-      color: $secondary;
+    .accomodation {
+      // margin-top: 160px;
+      margin-top: 10.11vw;
     }
 
-    &-description {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 2.5vw;
-      line-height: 100%;
-      /* or 32px */
-
-      font-feature-settings: 'pnum' on, 'lnum' on;
-      color: $accent;
-    }
-  }
-  .accomodation {
-    // margin-top: 160px;
-    margin-top: 2.11vw;
-  }
-
-  .transfer {
-    // margin-top: 420px;
-    margin-top: 25.17vw;
-  }
-
-  .food {
-    // margin-top: 300px;
-    margin-top: 8.83vw;
-  }
-
-  .welcome {
-    // margin-top: 300px;
-    margin-top: 15.83vw;
-  }
-
-  .program {
-    // margin-top: 350px;
-    margin-top: 13.31vw;
-  }
-
-  .show {
-    // margin-top: 450px;
-    margin-top: 30.25vw;
-  }
-
-  .night {
-    // margin-top: 400px;
-    margin-top: 18.78vw;
-  }
-  .photo {
-    .card-text {
-      width: 45%;
+    .transfer {
+      // margin-top: 420px;
+      margin-top: 25.17vw;
     }
 
-    // margin-top: 400px;
-    margin-top: 15.78vw;
-  }
+    .food {
+      // margin-top: 300px;
+      margin-top: 8.83vw;
+    }
+
+    .welcome {
+      // margin-top: 300px;
+      margin-top: 15.83vw;
+    }
+
+    .program {
+      // margin-top: 350px;
+      margin-top: 13.31vw;
+    }
+
+    .show {
+      // margin-top: 450px;
+      margin-top: 30.25vw;
+    }
+
+    .night {
+      // margin-top: 400px;
+      margin-top: 18.78vw;
+    }
+
+    .photo {
+      .card-text {
+        width: 45%;
+      }
+
+      // margin-top: 400px;
+      margin-top: 15.78vw;
+    }
 
   }
+
   .btn {
     width: 25.37vw;
   }
