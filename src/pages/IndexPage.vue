@@ -93,7 +93,7 @@
             </div>
             <div class="card-text ">
               <div class="card-title">Проживание</div>
-              <div class="card-description">Мы знаем, как важен здоровый сон для студентов, поэтому тебя ждёт уютная
+              <div class="card-description">Мы знаем, как важен здоровый сон для студентов, поэтому тебя ждут уютная
                 комната и спальное место.</div>
             </div>
           </div>
