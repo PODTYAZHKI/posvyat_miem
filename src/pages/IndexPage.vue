@@ -50,6 +50,9 @@
       <Swiper :modules="swiper_modules" :slides-per-view="4" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000"
         ref="swiper2">
         <SwiperSlide>
+          <img src="~assets/images/partners6.png" alt="" class="picture part"/>
+        </SwiperSlide>
+        <SwiperSlide>
           <img src="~assets/images/partners1.png" alt="" class="picture"/>
         </SwiperSlide>
         <SwiperSlide>
@@ -64,9 +67,7 @@
         <SwiperSlide>
           <img src="~assets/images/partners5.png" alt="" class="picture"/>
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="~assets/images/partners6.png" alt="" class="picture part"/>
-        </SwiperSlide>
+
         <!-- <SwiperSlide class="partners-slide">
           <q-img src="~assets/images/partners1.png" class="no-copy picture " />
         </SwiperSlide>
