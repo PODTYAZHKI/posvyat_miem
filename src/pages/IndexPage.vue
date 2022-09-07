@@ -50,22 +50,22 @@
       <Swiper :modules="swiper_modules" :slides-per-view="4" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000"
         ref="swiper2">
         <SwiperSlide>
-          <img src="~assets/images/partners6.png" alt="" class="picture part"/>
+          <img src="~assets/images/partners6.png" alt="" class="picture part no-copy"/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="~assets/images/partners1.png" alt="" class="picture"/>
+          <img src="~assets/images/partners1.png" alt="" class="picture no-copy"/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="~assets/images/partners2.png" alt="" class="picture"/>
+          <img src="~assets/images/partners2.png" alt="" class="picture no-copy"/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="~assets/images/partners3.png" alt="" class="picture"/>
+          <img src="~assets/images/partners3.png" alt="" class="picture no-copy"/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="~assets/images/partners4.png" alt="" class="picture part"/>
+          <img src="~assets/images/partners4.png" alt="" class="picture part no-copy"/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="~assets/images/partners5.png" alt="" class="picture"/>
+          <img src="~assets/images/partners5.png" alt="" class="picture no-copy"/>
         </SwiperSlide>
 
         <!-- <SwiperSlide class="partners-slide">
