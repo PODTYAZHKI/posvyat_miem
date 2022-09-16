@@ -45,7 +45,7 @@
 <script setup>
 
 import { ref } from 'vue'
-import { placer } from 'src/api/placer'
+import { resettlement } from 'src/api/resettlement'
 import { useQuasar } from 'quasar'
 import { useRouter } from 'vue-router'
 const router = useRouter()
@@ -101,7 +101,7 @@ async function onSubmit() {
   // person.value.submit = true
 
 
-  let result = await placer(data)
+  let result = await resettlement(data)
   console.log(result)
   if (result.link_vk[0] === 'Вы не зарегистрированы или не оплатили') {
     q.notify({
@@ -122,10 +122,9 @@ async function onSubmit() {
 
 </script>
 
-<style scope lang="scss">
-
+<style scoped lang="scss">
 .q-field :deep(.q-field__prefix) {
-  padding-right: 0;
+  padding-right: 0 !important;
 }
 
 .page {
@@ -171,6 +170,7 @@ async function onSubmit() {
 .q-checkbox :deep(.q-checkbox__bg) {
   border: 2px solid #fff;
 }
+
 .btn {
   background: #EE4D07;
   color: #fff;
@@ -245,5 +245,4 @@ async function onSubmit() {
     }
   }
 }
-
 </style>

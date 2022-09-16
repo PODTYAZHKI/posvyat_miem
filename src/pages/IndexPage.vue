@@ -13,8 +13,9 @@
             Скорее регистрируйся и проведи <br> лучшую ночь этой осени вместе с нами!
           </div>
           <div class="buttons flex justify-center">
-            <q-btn no-caps label="Регистрация" class="btn btn-reg" @click="goTo" />
+            <q-btn no-caps label="Регистрация" class="btn btn-reg" @click="goTo('/registration')" />
             <q-btn no-caps label="Узнать больше" class="btn btn-more" @click="go('https://vk.com/miemposvyat')" />
+            <q-btn no-caps label="Расселение" class="btn btn-reg" @click="goTo('/resettlement')" />
           </div>
         </div>
       </div>
@@ -50,22 +51,22 @@
       <Swiper :modules="swiper_modules" :slides-per-view="4" :rewind="true" :autoplay="{ delay: 0 }" :speed="2000"
         ref="swiper2">
         <SwiperSlide>
-          <img src="~assets/images/partners6.png" alt="" class="picture part no-copy"/>
+          <img src="~assets/images/partners6.png" alt="" class="picture part no-copy" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="~assets/images/partners1.png" alt="" class="picture no-copy"/>
+          <img src="~assets/images/partners1.png" alt="" class="picture no-copy" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="~assets/images/partners2.png" alt="" class="picture no-copy"/>
+          <img src="~assets/images/partners2.png" alt="" class="picture no-copy" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="~assets/images/partners3.png" alt="" class="picture no-copy"/>
+          <img src="~assets/images/partners3.png" alt="" class="picture no-copy" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="~assets/images/partners4.png" alt="" class="picture part no-copy"/>
+          <img src="~assets/images/partners4.png" alt="" class="picture part no-copy" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="~assets/images/partners5.png" alt="" class="picture no-copy"/>
+          <img src="~assets/images/partners5.png" alt="" class="picture no-copy" />
         </SwiperSlide>
 
         <!-- <SwiperSlide class="partners-slide">
@@ -210,7 +211,7 @@
           <div class="footer-text">Не отставай — заполняй форму прямо сейчас!</div>
         </div>
         <div class="column justify-center items-end" style="width:30%">
-          <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" @click="goTo()" />
+          <q-btn no-caps label="Регистрация" class="btn btn-reg q-mr-md" @click="goTo('/registration')" />
         </div>
       </div>
       <q-img src="~assets/images/footer.png" class="no-copy lines" />
@@ -238,8 +239,8 @@ onMounted(() => {
   // Swiper.autoplay.stop()
   // Swiper.autoplay.start()
 })
-function goTo() {
-  router.push({ path: '/registration' })
+function goTo(link) {
+  router.push({ path: link })
 }
 function go(link) {
   // window.location.href = 'https://vk.com/miemposvyat'
@@ -350,7 +351,7 @@ function go(link) {
   &-reg {
     background: #EE4D07;
     color: #fff;
-    margin-right: 0.58vw;
+
   }
 
   &-reg:hover {
@@ -361,7 +362,8 @@ function go(link) {
     border: 0.23vw solid #EE4D07;
     color: #EE4D07;
     background: #212121;
-    margin-left: 0.58vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
   }
 
   &-more:hover {
@@ -436,12 +438,14 @@ function go(link) {
       display: flex;
       justify-content: center;
       align-items: center;
+
       .picture {
         // background: red;
         height: 100%;
         // width: auto;
         // width: 100%;
       }
+
       .part {
         width: 13.88vw;
         height: auto;
