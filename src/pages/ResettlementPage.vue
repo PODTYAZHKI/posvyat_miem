@@ -31,7 +31,7 @@
         <q-radio name="shape" v-model="person.sex" val="Мужской" label="Мужской" class="radio" color="white"
           keep-color />
       </div>
-      <q-input filled v-model="person.wants" label="Хочешь с друзьями/без разницы" class="q-mb-lg" bg-color="white"
+      <q-input filled v-model="person.wants" label="Хочешь с друзьями (напиши их ФИО)/без разницы" class="q-mb-lg" bg-color="white"
         label-color="dark" type="textarea" :hide-bottom-space="true" :rules="[val => !!val || 'Обязательно поле']" />
 
       <div class="btn-wrapper">

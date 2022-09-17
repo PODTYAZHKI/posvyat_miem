@@ -15,7 +15,7 @@
           <div class="buttons flex justify-center">
             <q-btn no-caps label="Регистрация" class="btn btn-reg" @click="goTo('/registration')" />
             <q-btn no-caps label="Узнать больше" class="btn btn-more" @click="go('https://vk.com/miemposvyat')" />
-            <!-- <q-btn no-caps label="Расселение" class="btn btn-reg" @click="goTo('/resettlement')" /> -->
+            <q-btn no-caps label="Расселение" class="btn btn-reg" @click="goTo('/resettlement')" />
           </div>
         </div>
       </div>
