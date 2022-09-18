@@ -68,6 +68,9 @@
         <SwiperSlide>
           <img src="~assets/images/partners5.png" alt="" class="picture no-copy" />
         </SwiperSlide>
+        <SwiperSlide>
+          <img src="~assets/images/partners7.png" alt="" class="picture no-copy part" />
+        </SwiperSlide>
 
         <!-- <SwiperSlide class="partners-slide">
           <q-img src="~assets/images/partners1.png" class="no-copy picture " />
